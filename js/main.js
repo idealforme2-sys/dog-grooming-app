@@ -49,25 +49,36 @@ function initNavbar() {
 function initMobileDrawer() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const drawer = document.querySelector('.mobile-drawer');
+  const overlay = document.querySelector('.mobile-drawer-overlay');
   const closeBtn = document.querySelector('.mobile-drawer-close');
   const drawerLinks = document.querySelectorAll('.mobile-drawer-links a');
 
   if (!toggleBtn || !drawer) return;
 
-  toggleBtn.addEventListener('click', () => {
+  function openDrawer() {
     drawer.classList.add('active');
-  });
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn.addEventListener('click', openDrawer);
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      drawer.classList.remove('active');
-    });
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeDrawer);
   }
 
   drawerLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      drawer.classList.remove('active');
-    });
+    link.addEventListener('click', closeDrawer);
   });
 }
 

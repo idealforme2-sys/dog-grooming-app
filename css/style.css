@@ -121,11 +121,29 @@ ul, ol {
   padding: 0 24px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 .container-wide {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .container-wide {
+    padding: 0 18px;
+  }
 }
 
 /* Utility Classes */

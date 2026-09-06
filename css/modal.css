@@ -474,20 +474,37 @@
 /* --------------------------------------------------------------------------
    5. Mobile Navigation Drawer
    -------------------------------------------------------------------------- */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 18, 56, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1400;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.mobile-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: -100%;
   width: 85%;
-  max-width: 360px;
+  max-width: 340px;
   height: 100%;
   background-color: #FFFFFF;
   z-index: 1500;
-  box-shadow: -10px 0 30px rgba(30, 18, 56, 0.15);
-  padding: 30px 24px;
+  box-shadow: -10px 0 30px rgba(30, 18, 56, 0.2);
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   transition: right var(--transition-spring);
+  overflow-y: auto;
 }
 
 .mobile-drawer.active {
@@ -498,58 +515,122 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   border-bottom: 1px solid var(--lavender-border);
   padding-bottom: 16px;
+}
+
+.mobile-drawer-header .modal-close-btn {
+  position: static;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
 }
 
 .mobile-drawer-links {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 30px;
+  gap: 8px;
+  margin-bottom: 28px;
 }
 
 .mobile-drawer-links a {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-dark);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
 }
 
-.mobile-drawer-links a:hover {
+.mobile-drawer-links a:hover,
+.mobile-drawer-links a:active {
   color: var(--primary-pink);
+  background-color: var(--primary-pink-subtle);
 }
 
 /* --------------------------------------------------------------------------
-   6. Toast Notification
+   7. Responsive Rules for Modals & Lightbox
    -------------------------------------------------------------------------- */
-.toast-notice {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  background-color: var(--primary-purple);
-  color: #FFFFFF;
-  padding: 14px 22px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px rgba(30, 18, 56, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 3000;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: all var(--transition-spring);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.92rem;
-}
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 12px;
+    align-items: flex-end; /* Mobile bottom sheet style or clean card */
+  }
 
-.toast-notice.show {
-  transform: translateY(0);
-  opacity: 1;
-}
+  .modal-card {
+    border-radius: var(--radius-lg) var(--radius-lg) var(--radius-md) var(--radius-md);
+    max-height: 92vh;
+  }
 
-.toast-notice.success {
-  border-left: 4px solid var(--primary-pink);
+  .modal-header {
+    padding: 20px 20px 14px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    padding-right: 36px;
+  }
+
+  .modal-body {
+    padding: 20px 18px;
+  }
+
+  .modal-footer {
+    padding: 14px 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .chip-selection-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .service-includes-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Lightbox on mobile */
+  .lightbox-content {
+    max-width: 95vw;
+    padding: 0 10px;
+  }
+
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+
+  .lightbox-close-btn {
+    top: -38px;
+    right: 8px;
+    font-size: 1.8rem;
+  }
+
+  /* Toast notice on mobile */
+  .toast-notice {
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
 }
