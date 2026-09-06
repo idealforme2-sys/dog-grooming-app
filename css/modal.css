@@ -1,0 +1,555 @@
+/* ==========================================================================
+   MuffleyGroom - Modals, Lightbox & Mobile Menu
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Modal Backdrop & Base
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 18, 56, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 24px 70px rgba(30, 18, 56, 0.35);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(24px) scale(0.96);
+  transition: all var(--transition-spring);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--lavender-bg);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--primary-pink);
+  color: #FFFFFF;
+  transform: rotate(90deg);
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--lavender-border);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 28px 32px;
+  overflow-y: auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. Multi-Step Booking Modal
+   -------------------------------------------------------------------------- */
+.booking-steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.booking-steps-bar::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: var(--lavender-border);
+  z-index: 1;
+}
+
+.step-indicator-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--lavender-bg);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.step-indicator-item.active .step-circle {
+  background-color: var(--primary-pink);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-pink);
+}
+
+.step-indicator-item.completed .step-circle {
+  background-color: var(--accent-purple);
+  color: #FFFFFF;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-indicator-item.active .step-label {
+  color: var(--primary-pink);
+  font-weight: 700;
+}
+
+/* Step Form Content */
+.booking-step-pane {
+  display: none;
+  animation: popIn 0.3s ease;
+}
+
+.booking-step-pane.active {
+  display: block;
+}
+
+/* Option Chips Grid */
+.chip-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.selection-chip {
+  padding: 14px 16px;
+  border: 1.5px solid var(--lavender-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.selection-chip:hover {
+  border-color: var(--primary-pink);
+  background-color: var(--primary-pink-light);
+}
+
+.selection-chip.selected {
+  border-color: var(--primary-pink);
+  background-color: var(--primary-pink-light);
+  box-shadow: 0 4px 14px rgba(234, 77, 137, 0.18);
+}
+
+.selection-chip-icon {
+  font-size: 1.4rem;
+}
+
+.selection-chip-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.chip-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.chip-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Time Slot Pills */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.time-slot-btn {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--lavender-border);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.time-slot-btn:hover {
+  border-color: var(--primary-pink);
+}
+
+.time-slot-btn.selected {
+  background-color: var(--primary-pink);
+  color: #FFFFFF;
+  border-color: var(--primary-pink);
+  box-shadow: var(--shadow-pink);
+}
+
+/* Form Input Field */
+.modal-input-group {
+  margin-bottom: 16px;
+}
+
+.modal-input-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.modal-input-field {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--lavender-border);
+  font-size: 0.92rem;
+  transition: border-color var(--transition-fast);
+}
+
+.modal-input-field:focus {
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 3px rgba(234, 77, 137, 0.15);
+}
+
+/* Confirmation Success Box */
+.confirmation-box {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.confirmation-check-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #E8F8EE;
+  color: #2ECC71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 18px;
+  animation: pulseSubtle 2s infinite;
+}
+
+.confirmation-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.confirmation-summary-card {
+  background-color: var(--lavender-subtle);
+  border: 1px solid var(--lavender-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: left;
+  margin: 20px 0;
+  font-size: 0.88rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--lavender-border);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-key {
+  color: var(--text-muted);
+}
+
+.summary-val {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Modal Footer Actions */
+.modal-footer {
+  padding: 18px 32px;
+  background-color: var(--lavender-subtle);
+  border-top: 1px solid var(--lavender-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   3. Service Details Modal
+   -------------------------------------------------------------------------- */
+.service-modal-header-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.service-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-includes-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.service-include-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+
+.service-include-item .check {
+  color: #2ECC71;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   4. Gallery Lightbox
+   -------------------------------------------------------------------------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 10, 36, 0.92);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 900px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.lightbox-nav-btn:hover {
+  background-color: var(--primary-pink);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev { left: -70px; }
+.lightbox-next { right: -70px; }
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: #FFFFFF;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  color: var(--primary-pink);
+  transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile Navigation Drawer
+   -------------------------------------------------------------------------- */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 360px;
+  height: 100%;
+  background-color: #FFFFFF;
+  z-index: 1500;
+  box-shadow: -10px 0 30px rgba(30, 18, 56, 0.15);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: right var(--transition-spring);
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--lavender-border);
+  padding-bottom: 16px;
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.mobile-drawer-links a {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.mobile-drawer-links a:hover {
+  color: var(--primary-pink);
+}
+
+/* --------------------------------------------------------------------------
+   6. Toast Notification
+   -------------------------------------------------------------------------- */
+.toast-notice {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: var(--primary-purple);
+  color: #FFFFFF;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(30, 18, 56, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all var(--transition-spring);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-notice.success {
+  border-left: 4px solid var(--primary-pink);
+}

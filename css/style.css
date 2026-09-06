@@ -1,0 +1,252 @@
+/* ==========================================================================
+   MuffleyGroom - Design System & Core Styles
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary-pink: #EA4D89;
+  --primary-pink-hover: #D83776;
+  --primary-pink-light: #FDF0F5;
+  --primary-pink-subtle: #FFF5F8;
+
+  --primary-purple: #2E1D5A;
+  --primary-purple-dark: #1E1238;
+  --primary-purple-footer: #180E2F;
+  --accent-purple: #6D4CA8;
+  --accent-purple-light: #7E57C2;
+  --lavender-bg: #F4EFFC;
+  --lavender-subtle: #F9F6FE;
+  --lavender-border: #E6DCF5;
+
+  --text-dark: #2A1C4E;
+  --text-body: #5B4E73;
+  --text-muted: #837599;
+  --text-light: #B4A9C6;
+  --text-white: #FFFFFF;
+
+  --bg-white: #FFFFFF;
+  --bg-page: #FFFFFF;
+  --bg-hero: linear-gradient(135deg, #FFF6FA 0%, #FAF2FD 50%, #F4EEFB 100%);
+  --bg-banner: linear-gradient(135deg, #2D1B59 0%, #1F1240 100%);
+
+  /* Card Backgrounds */
+  --card-pink-bg: #FFF1F5;
+  --card-pink-border: #FCE1EB;
+  --card-lavender-bg: #F4EFFC;
+  --card-lavender-border: #E5DCF8;
+
+  /* Typography */
+  --font-display: 'Fredoka', 'Outfit', sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(46, 29, 90, 0.05);
+  --shadow-md: 0 8px 24px rgba(46, 29, 90, 0.08);
+  --shadow-lg: 0 16px 36px rgba(46, 29, 90, 0.12);
+  --shadow-pink: 0 8px 25px rgba(234, 77, 137, 0.35);
+  --shadow-purple: 0 8px 25px rgba(109, 76, 168, 0.3);
+
+  /* Radii */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Resets & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-pink { color: var(--primary-pink); }
+.text-purple { color: var(--accent-purple); }
+.text-dark { color: var(--text-dark); }
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.items-center { display: flex; align-items: center; }
+.justify-between { display: flex; justify-content: space-between; }
+
+/* Section Header Typography */
+.section-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 32px;
+}
+
+.section-title-badge .paw-icon {
+  font-size: 1.25rem;
+  display: inline-block;
+  transform-origin: center;
+  transition: transform var(--transition-spring);
+}
+
+.section-title-badge:hover .paw-icon {
+  transform: rotate(15deg) scale(1.15);
+}
+
+/* Standard Pill Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all var(--transition-spring);
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-pink {
+  background-color: var(--primary-pink);
+  color: var(--text-white);
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-pink:hover {
+  background-color: var(--primary-pink-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(234, 77, 137, 0.45);
+}
+
+.btn-purple {
+  background-color: var(--accent-purple);
+  color: var(--text-white);
+  box-shadow: var(--shadow-purple);
+}
+
+.btn-purple:hover {
+  background-color: var(--accent-purple-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(109, 76, 168, 0.45);
+}
+
+.btn-outline-pink {
+  background-color: var(--bg-white);
+  color: var(--primary-pink);
+  border: 2px solid var(--primary-pink);
+  box-shadow: 0 4px 16px rgba(234, 77, 137, 0.15);
+}
+
+.btn-outline-pink:hover {
+  background-color: var(--primary-pink);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-outline-purple {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-purple:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Micro-animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}

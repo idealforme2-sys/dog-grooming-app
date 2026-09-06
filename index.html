@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuffleyGroom - Premium Pet Grooming Salon</title>
+  <meta name="description" content="Professional care, happy pets. Grooming Salon Muffley Groom offers full-service dog and cat grooming, baths, haircuts, nail trimming, and de-shedding treatments.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modal.css">
+
+  <!-- Favicon Paw Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EA4D89'><path d='M12 14c-2.2 0-4 1.8-4 4 0 1.5 1.2 3 4 3s4-1.5 4-3c0-2.2-1.8-4-4-4zm-4.8-2c1.3 0 2.3-1.3 2.3-2.8S8.5 6.4 7.2 6.4 4.9 7.7 4.9 9.2 6 12 7.2 12zm9.6 0c1.3 0 2.3-1.3 2.3-2.8s-1-2.8-2.3-2.8-2.3 1.3-2.3 2.8 1 2.8 2.3 2.8zM4.3 16.5c1 0 1.8-1.1 1.8-2.5s-.8-2.5-1.8-2.5-1.8 1.1-1.8 2.5.8 2.5 1.8 2.5zm15.4 0c1 0 1.8-1.1 1.8-2.5s-.8-2.5-1.8-2.5-1.8 1.1-1.8 2.5.8 2.5 1.8 2.5z'/></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVBAR
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" id="brandLogo">
+        <div class="logo-paw-badge">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="12" fill="#2E1D5A"/>
+            <!-- Cute Paw With Heart -->
+            <ellipse cx="20" cy="24" rx="7" ry="6" fill="#EA4D89"/>
+            <path d="M20 22C19.2 21 17.5 21.2 17.5 22.8C17.5 24.5 20 26.5 20 26.5C20 26.5 22.5 24.5 22.5 22.8C22.5 21.2 20.8 21 20 22Z" fill="#FFFFFF"/>
+            <circle cx="12" cy="17" r="3.2" fill="#EA4D89"/>
+            <circle cx="28" cy="17" r="3.2" fill="#EA4D89"/>
+            <circle cx="16" cy="11.5" r="3.2" fill="#EA4D89"/>
+            <circle cx="24" cy="11.5" r="3.2" fill="#EA4D89"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <div class="brand-name">
+            <span class="part-muffley">Muffley</span><span class="part-groom">Groom</span>
+          </div>
+          <span class="brand-sub">GROOMING SALON</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#consultation" class="nav-link">Prices</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Action Button -->
+      <a href="tel:+799909999999" class="header-phone-btn" id="headerPhoneBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+        </svg>
+        <span>+7 999 0 999-99-99</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-name">
+        <span class="part-muffley">Muffley</span><span class="part-groom">Groom</span>
+      </div>
+      <button class="mobile-drawer-close modal-close-btn" aria-label="Close Menu">×</button>
+    </div>
+    <div class="mobile-drawer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#consultation">Prices</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:+799909999999" class="btn btn-pink" style="width: 100%;">
+      📞 +7 999 0 999-99-99
+    </a>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         1. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section" id="home">
+      <!-- Decorative background doodles -->
+      <svg class="hero-bg-doodle hero-doodle-1" viewBox="0 0 40 40" fill="none" stroke="#EA4D89" stroke-width="2" stroke-linecap="round">
+        <path d="M12 24c-1.5 0-3 1.2-3 2.7 0 1 .8 2 2.5 2s2.5-1 2.5-2c0-1.5-1-2.7-2-2.7zm-3.2-1.3c.9 0 1.6-.9 1.6-1.9s-.7-1.9-1.6-1.9-1.6.9-1.6 1.9.7 1.9 1.6 1.9zm6.4 0c.9 0 1.6-.9 1.6-1.9s-.7-1.9-1.6-1.9-1.6.9-1.6 1.9.7 1.9 1.6 1.9z"/>
+      </svg>
+      <svg class="hero-bg-doodle hero-doodle-2" viewBox="0 0 30 30" fill="none" stroke="#6D4CA8" stroke-width="2">
+        <path d="M15 5C11 1 5 3 5 8c0 6 10 11 10 11s10-5 10-11c0-5-6-7-10-3z"/>
+      </svg>
+      <svg class="hero-bg-doodle hero-doodle-3" viewBox="0 0 30 30" fill="none" stroke="#EA4D89" stroke-width="2">
+        <path d="M15 5C11 1 5 3 5 8c0 6 10 11 10 11s10-5 10-11c0-5-6-7-10-3z"/>
+      </svg>
+
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span>Professional Care, Happy Pets</span>
+              <span class="heart-icon">♡</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="title-dark">Grooming</span>
+              <span class="title-dark">Salon <span class="text-pink">Muffley</span></span>
+              <span class="title-pink">Groom</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Your pet deserves the best care, beauty and lots of love.
+            </p>
+
+            <div class="hero-cta-wrap">
+              <button class="btn btn-hero-cta trigger-booking-modal" id="heroBookingBtn" data-service="Full Grooming Package">
+                <span>Book a Grooming</span>
+                <span>🐾</span>
+              </button>
+            </div>
+
+            <!-- 4 Circular Badges -->
+            <div class="hero-features-row">
+              <div class="hero-feature-item">
+                <div class="feature-circle-icon pink">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <span class="feature-label">Experienced Groomers</span>
+              </div>
+
+              <div class="hero-feature-item">
+                <div class="feature-circle-icon purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                  </svg>
+                </div>
+                <span class="feature-label">Safe & High Quality Products</span>
+              </div>
+
+              <div class="hero-feature-item">
+                <div class="feature-circle-icon pink">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 14c-2.2 0-4 1.8-4 4 0 1.5 1.2 3 4 3s4-1.5 4-3c0-2.2-1.8-4-4-4zm-4.8-2c1.3 0 2.3-1.3 2.3-2.8S8.5 6.4 7.2 6.4 4.9 7.7 4.9 9.2 6 12 7.2 12zm9.6 0c1.3 0 2.3-1.3 2.3-2.8s-1-2.8-2.3-2.8-2.3 1.3-2.3 2.8 1 2.8 2.3 2.8z"/>
+                  </svg>
+                </div>
+                <span class="feature-label">Personalized Care</span>
+              </div>
+
+              <div class="hero-feature-item">
+                <div class="feature-circle-icon purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                  </svg>
+                </div>
+                <span class="feature-label">Clean & Pet Friendly Salon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Visual / Fluffy Puppy -->
+          <div class="hero-media-wrap">
+            <div class="hero-circle-backdrop">
+              <!-- Cute white outline doodles on pink circle -->
+              <svg class="circle-doodle-art" viewBox="0 0 400 400" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round">
+                <!-- Comb doodle -->
+                <path d="M80 60h60v20h-60zM90 80v20M105 80v20M120 80v20M135 80v20"/>
+                <!-- Scissors doodle -->
+                <circle cx="310" cy="90" r="12"/>
+                <circle cx="340" cy="115" r="12"/>
+                <path d="M302 98l42 42M332 122l-42-42"/>
+                <!-- Shampoo bottle -->
+                <rect x="50" y="280" width="36" height="50" rx="8"/>
+                <path d="M60 280v-10h16v10"/>
+                <!-- Paw prints -->
+                <circle cx="330" cy="270" r="8"/>
+                <circle cx="315" cy="255" r="4"/>
+                <circle cx="345" cy="255" r="4"/>
+              </svg>
+            </div>
+
+            <!-- Speech Bubble -->
+            <div class="hero-speech-bubble">
+              <span>Because they're family</span>
+              <span class="bubble-heart">♡</span>
+              <span>🐾</span>
+            </div>
+
+            <!-- Fluffy Pomeranian with purple bowtie -->
+            <img 
+              src="assets/images/hero_pomeranian.jpg" 
+              alt="Adorable fluffy white Pomeranian with purple bowtie sitting on lavender cushion" 
+              class="hero-pet-image" 
+              id="heroPetImage"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. ABOUT US SECTION
+         ====================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left: Shih Tzu with Sunglasses & Bandana -->
+          <div class="about-media-box">
+            <img 
+              src="assets/images/about_shih_tzu.jpg" 
+              alt="Cute fluffy Shih Tzu dog wearing stylish sunglasses and purple bandana" 
+              class="about-image" 
+              id="aboutImage"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Right: Content & Services Checklist Box -->
+          <div class="about-content">
+            <span class="about-tag">ABOUT US</span>
+            <h2 class="about-title">A Full-Service Grooming Salon</h2>
+            <p class="about-desc">
+              We offer a full range of professional grooming services to keep your pet healthy, happy and looking their best.
+            </p>
+
+            <!-- 2-Column Checklist Container -->
+            <div class="about-services-box">
+              <div class="about-services-grid">
+                <!-- Column 1 -->
+                <div class="service-item-row" title="Click to schedule Haircut & Styling">
+                  <div class="service-item-left">
+                    <span class="service-item-icon pink">✂️</span>
+                    <span class="service-item-name">Haircut & Styling</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Teeth Brushing">
+                  <div class="service-item-left">
+                    <span class="service-item-icon purple">🪥</span>
+                    <span class="service-item-name">Teeth Brushing</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Breed Specific Grooming">
+                  <div class="service-item-left">
+                    <span class="service-item-icon purple">🐕</span>
+                    <span class="service-item-name">Breed Specific Grooming</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Skin & Coat Care">
+                  <div class="service-item-left">
+                    <span class="service-item-icon pink">✨</span>
+                    <span class="service-item-name">Skin & Coat Care</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Bath & Premium Shampoo">
+                  <div class="service-item-left">
+                    <span class="service-item-icon pink">🧴</span>
+                    <span class="service-item-name">Bath & Premium Shampoo</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule De-shedding Treatment">
+                  <div class="service-item-left">
+                    <span class="service-item-icon purple">🪮</span>
+                    <span class="service-item-name">De-shedding Treatment</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Nail Trimming">
+                  <div class="service-item-left">
+                    <span class="service-item-icon purple">🐾</span>
+                    <span class="service-item-name">Nail Trimming</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Pet Perfume & Finishing">
+                  <div class="service-item-left">
+                    <span class="service-item-icon pink">🌸</span>
+                    <span class="service-item-name">Pet Perfume & Finishing</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+
+                <div class="service-item-row" title="Click to schedule Ear Cleaning">
+                  <div class="service-item-left">
+                    <span class="service-item-icon pink">👂</span>
+                    <span class="service-item-name">Ear Cleaning</span>
+                  </div>
+                  <span class="service-item-arrow">&gt;</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View All Services CTA Button -->
+            <button class="btn btn-pink trigger-booking-modal" data-service="Full Spa Treatment">
+              <span>View All Services</span>
+              <span>🐾</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. OUR POPULAR SERVICES SECTION
+         ====================================================================== -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>OUR POPULAR SERVICES</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+        </div>
+
+        <div class="services-grid-4">
+          <!-- Service Card 1: Bath & Hygiene -->
+          <div class="service-card pink-theme" id="cardBath">
+            <div class="service-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 13V4.83C20 3.27 18.73 2 17.17 2c-.75 0-1.47.3-2 .83l-1.25 1.25c-.16-.05-.33-.08-.51-.08-.78 0-1.44.5-1.68 1.21l-1.89 5.67C9.35 11.23 8.78 11.5 8 11.5c-1.1 0-2 .9-2 2v1H2v2c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5v-3.5h-2zm-7.07-6.07l.79-.79c.2-.2.45-.31.71-.31.55 0 1 .45 1 1 0 .26-.11.51-.31.71l-.79.79-1.4-1.4z"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">BATH & HYGIENE</h3>
+            <p class="service-card-desc">Gentle bath, premium shampoo, ear cleaning and paw care.</p>
+            <div class="service-card-image-wrap">
+              <img 
+                src="assets/images/service_bath.jpg" 
+                alt="Fluffy puppy wrapped snugly in pink towel" 
+                class="service-card-image" 
+                loading="lazy"
+              />
+            </div>
+            <button class="btn btn-pink btn-card-action trigger-service-detail" data-service-key="bath-hygiene">
+              <span>Learn More</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Service Card 2: Haircut & Styling -->
+          <div class="service-card purple-theme" id="cardHaircut">
+            <div class="service-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">HAIRCUT & STYLING</h3>
+            <p class="service-card-desc">Breed specific haircuts and trendy styles.</p>
+            <div class="service-card-image-wrap">
+              <img 
+                src="assets/images/service_haircut.jpg" 
+                alt="Fluffy toy poodle with stylish haircut and purple bow tie" 
+                class="service-card-image" 
+                loading="lazy"
+              />
+            </div>
+            <button class="btn btn-purple btn-card-action trigger-service-detail" data-service-key="haircut-styling">
+              <span>Learn More</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Service Card 3: Nail Trimming -->
+          <div class="service-card pink-theme" id="cardNail">
+            <div class="service-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">NAIL TRIMMING</h3>
+            <p class="service-card-desc">Safe and gentle nail trimming.</p>
+            <div class="service-card-image-wrap">
+              <img 
+                src="assets/images/service_nails.jpg" 
+                alt="Smiling happy Welsh Corgi showing neat manicured paws" 
+                class="service-card-image" 
+                loading="lazy"
+              />
+            </div>
+            <button class="btn btn-pink btn-card-action trigger-service-detail" data-service-key="nail-trimming">
+              <span>Learn More</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Service Card 4: De-Shedding -->
+          <div class="service-card purple-theme" id="cardDeshedding">
+            <div class="service-card-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">DE-SHEDDING</h3>
+            <p class="service-card-desc">Reduces shedding and keeps coat healthy & shiny.</p>
+            <div class="service-card-image-wrap">
+              <img 
+                src="assets/images/service_cat.jpg" 
+                alt="Fluffy domestic longhaired cat looking forward" 
+                class="service-card-image" 
+                loading="lazy"
+              />
+            </div>
+            <button class="btn btn-purple btn-card-action trigger-service-detail" data-service-key="de-shedding">
+              <span>Learn More</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. CONSULTATION / HELP BANNER
+         ====================================================================== -->
+    <section class="consultation-section" id="consultation">
+      <div class="container">
+        <div class="consultation-banner">
+          <!-- Background Doodles inside banner -->
+          <svg class="consult-doodle consult-doodle-1" viewBox="0 0 30 30" fill="none" stroke="#FFFFFF" stroke-width="2">
+            <path d="M15 5C11 1 5 3 5 8c0 6 10 11 10 11s10-5 10-11c0-5-6-7-10-3z"/>
+          </svg>
+          <svg class="consult-doodle consult-doodle-2" viewBox="0 0 40 40" fill="none" stroke="#FFFFFF" stroke-width="2">
+            <ellipse cx="20" cy="24" rx="7" ry="6"/>
+            <circle cx="12" cy="17" r="3"/>
+            <circle cx="28" cy="17" r="3"/>
+            <circle cx="16" cy="11" r="3"/>
+            <circle cx="24" cy="11" r="3"/>
+          </svg>
+
+          <div class="consultation-grid">
+            <!-- Left Text Box -->
+            <div class="consultation-text-box">
+              <h3>Need a <span class="text-pink">Consultation</span> or Help Choosing the Right Service?</h3>
+              <p>We're here to help! Contact us and give your pet the best care possible.</p>
+            </div>
+
+            <!-- Center Form -->
+            <form class="consultation-form" id="consultationForm">
+              <!-- Name Input -->
+              <div class="form-input-pill">
+                <span class="icon">👤</span>
+                <input type="text" name="client_name" placeholder="Your Name" required />
+              </div>
+
+              <!-- Phone & Pet Type -->
+              <div class="form-row-2">
+                <div class="form-input-pill">
+                  <span class="icon">📞</span>
+                  <input type="tel" name="phone_number" placeholder="Phone Number" required />
+                </div>
+                <div class="form-input-pill">
+                  <span class="icon">🐾</span>
+                  <select name="pet_type" aria-label="Pet Type">
+                    <option value="Dog">Pet Type (Dog / Cat)</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Other">Other Pet</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message Input -->
+              <div class="form-input-pill">
+                <span class="icon">💬</span>
+                <input type="text" name="client_message" placeholder="Message (Optional)" />
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="form-actions-row">
+                <button type="button" class="btn btn-pink trigger-booking-modal" data-service="Consultation">
+                  <span>Book a Grooming</span>
+                  <span>🐾</span>
+                </button>
+                <button type="submit" class="btn btn-outline-purple">
+                  <span>Send Message</span>
+                  <span>✈</span>
+                </button>
+              </div>
+            </form>
+
+            <!-- Right Dog & Cat Photo -->
+            <div class="consultation-media-box">
+              <img 
+                src="assets/images/consultation_pets.jpg" 
+                alt="Golden Retriever and fluffy cat smiling together side by side" 
+                class="consultation-image" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FROM OUR GALLERY SECTION
+         ====================================================================== -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>FROM OUR GALLERY</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+        </div>
+
+        <!-- 6 Gallery Images -->
+        <div class="gallery-grid-6">
+          <div class="gallery-item-card" data-index="0" title="Click to view photo">
+            <img src="assets/images/gallery_1.jpg" alt="Fluffy dog in bath with soap foam" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-item-card" data-index="1" title="Click to view photo">
+            <img src="assets/images/gallery_2.jpg" alt="Hands brushing puppy coat" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-item-card" data-index="2" title="Click to view photo">
+            <img src="assets/images/gallery_3.jpg" alt="Groomer in purple shirt with happy puppy" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-item-card" data-index="3" title="Click to view photo">
+            <img src="assets/images/gallery_4.jpg" alt="White poodle with purple collar" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-item-card" data-index="4" title="Click to view photo">
+            <img src="assets/images/gallery_5.jpg" alt="Cat wrapped snugly in lavender towel" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+
+          <div class="gallery-item-card" data-index="5" title="Click to view photo">
+            <img src="assets/images/gallery_6.jpg" alt="Groomer blow-drying golden retriever" class="gallery-item-image" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <div class="gallery-zoom-icon">🔍</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-outline-pink" id="viewFullGalleryBtn">
+            <span>View Full Gallery</span>
+            <span>📷</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. VALUE PROPS / TRUST BADGES STRIP
+         ====================================================================== -->
+    <section class="value-props-section" id="reviews">
+      <div class="container">
+        <div class="value-props-strip">
+          <div class="value-prop-item">
+            <div class="value-prop-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+              </svg>
+            </div>
+            <div class="value-prop-text">
+              <span class="value-prop-title">100% Pet Safe</span>
+              <span class="value-prop-subtitle">Gentle care for your pets</span>
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+              </svg>
+            </div>
+            <div class="value-prop-text">
+              <span class="value-prop-title">Premium Products</span>
+              <span class="value-prop-subtitle">Only the best for your pets</span>
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="value-prop-text">
+              <span class="value-prop-title">Expert Groomers</span>
+              <span class="value-prop-subtitle">Trained & experienced</span>
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+            </div>
+            <div class="value-prop-text">
+              <span class="value-prop-title">Clean & Comfortable</span>
+              <span class="value-prop-subtitle">Hygienic & relaxing salon 🐾</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER SECTION
+       ======================================================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Socials -->
+        <div class="footer-brand-col">
+          <a href="#home" class="brand-logo">
+            <div class="logo-paw-badge">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                <rect width="40" height="40" rx="10" fill="#EA4D89"/>
+                <ellipse cx="20" cy="24" rx="7" ry="6" fill="#FFFFFF"/>
+                <circle cx="12" cy="17" r="3" fill="#FFFFFF"/>
+                <circle cx="28" cy="17" r="3" fill="#FFFFFF"/>
+                <circle cx="16" cy="11" r="3" fill="#FFFFFF"/>
+                <circle cx="24" cy="11" r="3" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-name">
+                <span class="part-muffley">Muffley</span><span class="part-groom">Groom</span>
+              </div>
+              <span class="brand-sub" style="color: rgba(255,255,255,0.6);">GROOMING SALON</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Professional grooming with love and care. Your pet's happiness is our priority.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="TikTok">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 003 15.66a6.34 6.34 0 0010.86 4.47c1.78-1.69 2.64-3.9 2.45-6.33a8.3 8.3 0 004.83 1.54v-3.47a4.85 4.85 0 01-1.55-5.18z"/></svg>
+            </a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="WhatsApp">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.63c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">QUICK LINKS</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#home">Home</a></li>
+            <li class="footer-link-item"><a href="#about">About Us</a></li>
+            <li class="footer-link-item"><a href="#services">Services</a></li>
+            <li class="footer-link-item"><a href="#consultation">Prices</a></li>
+            <li class="footer-link-item"><a href="#gallery">Gallery</a></li>
+            <li class="footer-link-item"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">SERVICES</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="Haircut & Styling">Haircut & Styling</a></li>
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="Bath & Hygiene">Bath & Hygiene</a></li>
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="Nail Trimming">Nail Trimming</a></li>
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="De-shedding Treatment">De-shedding</a></li>
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="Teeth Brushing">Teeth Brushing</a></li>
+            <li class="footer-link-item"><a href="#services" class="trigger-booking-modal" data-service="Ear Cleaning">Ear Cleaning</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Us -->
+        <div class="footer-contact-col">
+          <h4 class="footer-col-title">CONTACT US</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row-item">
+              <span class="icon">📞</span>
+              <span>+7 999 0 999-99-99</span>
+            </div>
+            <div class="contact-row-item">
+              <span class="icon">✉️</span>
+              <span>muffleygroom@gmail.com</span>
+            </div>
+            <div class="contact-row-item">
+              <span class="icon">📍</span>
+              <span>123 Pet Street, Pet City, Moscow, Russia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 5: Working Hours -->
+        <div class="footer-hours-col">
+          <h4 class="footer-col-title">
+            <span style="margin-right: 6px;">🕒</span> WORKING HOURS
+          </h4>
+          <div class="working-hours-card">
+            <div class="hours-row">
+              <span class="hours-day">Mon - Fri:</span>
+              <span class="hours-time">9:00 AM - 7:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sat:</span>
+              <span class="hours-time">10:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Sun:</span>
+              <span class="hours-time">10:00 AM - 4:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span>© 2024 Muffley Groom. All rights reserved.</span>
+        <span>Designed with love for pets & their families 🐾</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MULTI-STEP BOOKING MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close Booking Modal">×</button>
+      
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <span>🐾 Book a Grooming Session</span>
+        </h3>
+        <p class="modal-subtitle">Professional care & lots of love for your best friend</p>
+      </div>
+
+      <div class="modal-body">
+        <!-- Progress Steps -->
+        <div class="booking-steps-bar">
+          <div class="step-indicator-item active">
+            <div class="step-circle">1</div>
+            <span class="step-label">Service</span>
+          </div>
+          <div class="step-indicator-item">
+            <div class="step-circle">2</div>
+            <span class="step-label">Time</span>
+          </div>
+          <div class="step-indicator-item">
+            <div class="step-circle">3</div>
+            <span class="step-label">Details</span>
+          </div>
+          <div class="step-indicator-item">
+            <div class="step-circle">4</div>
+            <span class="step-label">Done</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Service & Pet Selection -->
+        <div class="booking-step-pane active" id="bookingStep1">
+          <label class="modal-input-label">Select Primary Service</label>
+          <div class="chip-selection-grid">
+            <div class="selection-chip service-chip selected" data-value="Bath & Hygiene">
+              <span class="selection-chip-icon">🛁</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">Bath & Hygiene</span>
+                <span class="chip-meta">From $45 • 45m</span>
+              </div>
+            </div>
+            <div class="selection-chip service-chip" data-value="Haircut & Styling">
+              <span class="selection-chip-icon">✂️</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">Haircut & Styling</span>
+                <span class="chip-meta">From $70 • 75m</span>
+              </div>
+            </div>
+            <div class="selection-chip service-chip" data-value="Nail Trimming">
+              <span class="selection-chip-icon">🐾</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">Nail Trimming</span>
+                <span class="chip-meta">From $20 • 20m</span>
+              </div>
+            </div>
+            <div class="selection-chip service-chip" data-value="De-shedding Treatment">
+              <span class="selection-chip-icon">🪮</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">De-shedding</span>
+                <span class="chip-meta">From $55 • 60m</span>
+              </div>
+            </div>
+          </div>
+
+          <label class="modal-input-label">Pet Type</label>
+          <div class="chip-selection-grid">
+            <div class="selection-chip pet-type-chip selected" data-value="Dog">
+              <span class="selection-chip-icon">🐶</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">Dog</span>
+                <span class="chip-meta">Puppy to Senior</span>
+              </div>
+            </div>
+            <div class="selection-chip pet-type-chip" data-value="Cat">
+              <span class="selection-chip-icon">🐱</span>
+              <div class="selection-chip-info">
+                <span class="chip-title">Cat</span>
+                <span class="chip-meta">Short & Long Hair</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Date & Time -->
+        <div class="booking-step-pane" id="bookingStep2">
+          <div class="modal-input-group">
+            <label class="modal-input-label" for="bookingDate">Preferred Date</label>
+            <input type="date" id="bookingDate" class="modal-input-field" />
+          </div>
+
+          <label class="modal-input-label">Available Time Slots</label>
+          <div class="time-slots-grid">
+            <button type="button" class="time-slot-btn selected" data-time="09:30 AM">09:30 AM</button>
+            <button type="button" class="time-slot-btn" data-time="11:00 AM">11:00 AM</button>
+            <button type="button" class="time-slot-btn" data-time="01:30 PM">01:30 PM</button>
+            <button type="button" class="time-slot-btn" data-time="03:00 PM">03:00 PM</button>
+            <button type="button" class="time-slot-btn" data-time="04:30 PM">04:30 PM</button>
+            <button type="button" class="time-slot-btn" data-time="06:00 PM">06:00 PM</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Owner & Pet Details -->
+        <div class="booking-step-pane" id="bookingStep3">
+          <div class="modal-input-group">
+            <label class="modal-input-label" for="bookingOwnerName">Your Name *</label>
+            <input type="text" id="bookingOwnerName" class="modal-input-field" placeholder="e.g. Elena Petrova" required />
+          </div>
+
+          <div class="modal-input-group">
+            <label class="modal-input-label" for="bookingPhone">Phone Number *</label>
+            <input type="tel" id="bookingPhone" class="modal-input-field" placeholder="+7 999 123-45-67" required />
+          </div>
+
+          <div class="modal-input-group">
+            <label class="modal-input-label" for="bookingPetName">Pet Name & Breed</label>
+            <input type="text" id="bookingPetName" class="modal-input-field" placeholder="e.g. Bella (Pomeranian)" />
+          </div>
+
+          <div class="modal-input-group">
+            <label class="modal-input-label" for="bookingNotes">Special Notes / Sensitivities</label>
+            <input type="text" id="bookingNotes" class="modal-input-field" placeholder="e.g. Sensitive paws, first time grooming" />
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="booking-step-pane" id="bookingStep4">
+          <div class="confirmation-box">
+            <div class="confirmation-check-circle">✓</div>
+            <h4 class="confirmation-title">Booking Reserved!</h4>
+            <p class="modal-subtitle">We have scheduled your grooming appointment.</p>
+            
+            <div class="confirmation-summary-card">
+              <div class="summary-row">
+                <span class="summary-key">Service:</span>
+                <span class="summary-val" id="sumService">Bath & Hygiene</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-key">Pet:</span>
+                <span class="summary-val" id="sumPet">Bella (Dog)</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-key">When:</span>
+                <span class="summary-val" id="sumDateTime">Tomorrow at 10:00 AM</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-key">Client:</span>
+                <span class="summary-val" id="sumContact">Elena (+7 999 123-45-67)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-pink" id="bookingPrevBtn" style="visibility: hidden;">
+          ← Back
+        </button>
+        <button type="button" class="btn btn-pink" id="bookingNextBtn">
+          Continue to Date & Time →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SERVICE DETAILS MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="serviceDetailsModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close Service Details">×</button>
+      <img src="assets/images/service_bath.jpg" alt="Service Preview" class="service-modal-header-img" id="serviceModalImg" />
+      <div class="modal-body">
+        <div class="service-modal-details">
+          <h3 class="modal-title" id="serviceModalTitle">Bath & Hygiene</h3>
+          <p id="serviceModalDesc" style="color: var(--text-body); font-size: 0.95rem; line-height: 1.6;"></p>
+          
+          <div style="display: flex; gap: 24px; padding: 12px 0; border-top: 1px solid var(--lavender-border); border-bottom: 1px solid var(--lavender-border);">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Duration</span>
+              <strong id="serviceModalDuration" style="color: var(--text-dark); font-size: 1rem;">45 - 60 mins</strong>
+            </div>
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Price Estimate</span>
+              <strong id="serviceModalPrice" style="color: var(--primary-pink); font-size: 1rem;">$45 - $65</strong>
+            </div>
+          </div>
+
+          <div>
+            <span style="font-family: var(--font-heading); font-weight: 700; color: var(--text-dark); font-size: 0.9rem;">What's Included:</span>
+            <div class="service-includes-list" id="serviceModalIncludes"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: flex-end;">
+        <button type="button" class="btn btn-pink" id="serviceModalBookBtn">
+          <span>Book This Service</span>
+          <span>🐾</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GALLERY LIGHTBOX MODAL
+       ======================================================================== -->
+  <div class="lightbox-overlay" id="galleryLightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close-btn" id="lightboxCloseBtn">&times;</span>
+      <button class="lightbox-nav-btn lightbox-prev" id="lightboxPrevBtn" aria-label="Previous Photo">&#10094;</button>
+      <img src="assets/images/gallery_1.jpg" alt="Enlarged Gallery Photo" class="lightbox-img" id="lightboxImg" />
+      <div class="lightbox-caption" id="lightboxCaption">Gallery photo caption</div>
+      <button class="lightbox-nav-btn lightbox-next" id="lightboxNextBtn" aria-label="Next Photo">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
