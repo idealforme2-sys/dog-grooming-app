@@ -7,29 +7,50 @@ document.addEventListener('DOMContentLoaded', () => {
   initElfsightFeedObserver();
 });
 
+function removeElfsightBadge() {
+  const badgeSelectors = [
+    'a[href*="elfsight.com"]',
+    'a.eapps-link',
+    '[class*="eapps-link"]',
+    '[class*="eapps-widget-toolbar"]',
+    'a[title*="Free Instagram"]'
+  ];
+  
+  badgeSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      const container = el.closest('[class*="toolbar"]') || el.closest('[class*="badge"]') || el;
+      container.remove();
+    });
+  });
+}
+
 function initElfsightFeedObserver() {
   const elfsightApp = document.querySelector('[class*="elfsight-app"]');
   const fallback = document.getElementById('elfsightFallback');
-  if (!elfsightApp || !fallback) return;
 
   function checkRendered() {
+    if (!elfsightApp) return false;
     const hasFeedContent = elfsightApp.querySelector('iframe, img, a, [class*="eapps"], [class*="instagram"], [class*="Post"]');
-    if (hasFeedContent && elfsightApp.clientHeight > 80) {
+    if (hasFeedContent && elfsightApp.clientHeight > 80 && fallback) {
       fallback.style.display = 'none';
       return true;
     }
     return false;
   }
 
-  if (checkRendered()) return;
+  removeElfsightBadge();
+  checkRendered();
+
+  // Periodic removal during dynamic load
+  const badgeInterval = setInterval(removeElfsightBadge, 200);
+  setTimeout(() => clearInterval(badgeInterval), 8000);
 
   const observer = new MutationObserver(() => {
-    if (checkRendered()) {
-      observer.disconnect();
-    }
+    removeElfsightBadge();
+    checkRendered();
   });
 
-  observer.observe(elfsightApp, { childList: true, subtree: true });
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 const galleryItems = [

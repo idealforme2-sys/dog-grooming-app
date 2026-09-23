@@ -871,6 +871,35 @@
   font-size: 0.95rem;
 }
 
+/* --------------------------------------------------------------------------
+   Remove/Hide Elfsight Free Widget Branding & Attributions
+   -------------------------------------------------------------------------- */
+.elfsight-app-2a505587-77ec-4120-b8b0-2557cd48c588 a[href*="elfsight.com"],
+.elfsight-gallery-wrap a[href*="elfsight.com"],
+.elfsight-gallery-wrap a.eapps-link,
+.elfsight-gallery-wrap [class*="eapps-link"],
+.elfsight-gallery-wrap [class*="eapps-widget-toolbar"],
+.elfsight-gallery-wrap [class*="WidgetBadge"],
+.elfsight-gallery-wrap [class*="widget-badge"],
+.elfsight-gallery-wrap a[title*="Free Instagram"],
+a.eapps-link,
+a[href*="elfsight.com"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0) !important;
+  transform: scale(0) !important;
+}
+
 .gallery-item-card {
   position: relative;
   aspect-ratio: 4 / 3;
