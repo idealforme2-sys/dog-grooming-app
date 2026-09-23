@@ -94,7 +94,7 @@ function initConsultationForm() {
 
     const nameInput = form.querySelector('input[name="client_name"]');
     const phoneInput = form.querySelector('input[name="phone_number"]');
-    const petTypeInput = form.querySelector('select[name="pet_type"]');
+    const dogSizeInput = form.querySelector('select[name="dog_size"]') || form.querySelector('select[name="pet_type"]');
 
     if (!nameInput.value.trim()) {
       showToast('⚠️ Please enter your name.', 'error');
@@ -115,7 +115,7 @@ function initConsultationForm() {
     submitBtn.disabled = true;
 
     setTimeout(() => {
-      showToast('🐾 Thank you! We received your request and will call you shortly.', 'success');
+      showToast('🐶 Thank you! We received your request and will call you shortly.', 'success');
       form.reset();
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;

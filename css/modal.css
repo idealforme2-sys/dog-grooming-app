@@ -181,6 +181,16 @@
   margin-bottom: 20px;
 }
 
+.chip-selection-grid.dog-size-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 580px) {
+  .chip-selection-grid.dog-size-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .selection-chip {
   padding: 14px 16px;
   border: 1.5px solid var(--lavender-border);

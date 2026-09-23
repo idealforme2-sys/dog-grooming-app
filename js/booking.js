@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let bookingData = {
   service: 'Bath & Hygiene',
-  petType: 'Dog',
-  petSize: 'Small (under 10kg)',
+  dogSize: 'Small Dog (under 10kg)',
   date: '',
   time: '10:00 AM',
   ownerName: '',
@@ -60,7 +59,7 @@ function initBookingModal() {
     chip.addEventListener('click', () => {
       petTypeChips.forEach(c => c.classList.remove('selected'));
       chip.classList.add('selected');
-      bookingData.petType = chip.getAttribute('data-value');
+      bookingData.dogSize = chip.getAttribute('data-value');
     });
   });
 
@@ -210,7 +209,8 @@ function goToStep(step) {
 
 function populateSummary() {
   document.getElementById('sumService').textContent = bookingData.service;
-  document.getElementById('sumPet').textContent = `${bookingData.petName} (${bookingData.petType})`;
+  const dogDisplay = bookingData.petName ? `${bookingData.petName} (${bookingData.dogSize})` : bookingData.dogSize;
+  document.getElementById('sumPet').textContent = dogDisplay;
   document.getElementById('sumDateTime').textContent = `${bookingData.date} at ${bookingData.time}`;
   document.getElementById('sumContact').textContent = `${bookingData.ownerName} (${bookingData.phone})`;
 }
@@ -227,7 +227,7 @@ const serviceDataCatalog = {
     image: 'assets/images/service_bath.jpg',
     duration: '45 - 60 mins',
     price: '$45 - $65',
-    includes: ['Organic coat shampoo & rinse', 'Gentle warm blow-dry', 'Ear cleaning & hair removal', 'Sanitary & paw pad trimming', 'Nail clipping & filing', 'Signature pet fragrance mist']
+    includes: ['Organic coat shampoo & rinse', 'Gentle warm blow-dry', 'Ear cleaning & hair removal', 'Sanitary & paw pad trimming', 'Nail clipping & filing', 'Signature dog fragrance mist']
   },
   'haircut-styling': {
     title: 'Haircut & Styling',

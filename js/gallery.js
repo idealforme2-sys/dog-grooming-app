@@ -25,7 +25,7 @@ const galleryItems = [
   },
   {
     src: 'assets/images/gallery_5.jpg',
-    caption: 'Warm spa towel wrap for calm feline grooming'
+    caption: 'Warm spa towel wrap for calm dog grooming'
   },
   {
     src: 'assets/images/gallery_6.jpg',
