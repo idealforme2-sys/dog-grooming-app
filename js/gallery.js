@@ -4,7 +4,33 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initGalleryLightbox();
+  initElfsightFeedObserver();
 });
+
+function initElfsightFeedObserver() {
+  const elfsightApp = document.querySelector('[class*="elfsight-app"]');
+  const fallback = document.getElementById('elfsightFallback');
+  if (!elfsightApp || !fallback) return;
+
+  function checkRendered() {
+    const hasFeedContent = elfsightApp.querySelector('iframe, img, a, [class*="eapps"], [class*="instagram"], [class*="Post"]');
+    if (hasFeedContent && elfsightApp.clientHeight > 80) {
+      fallback.style.display = 'none';
+      return true;
+    }
+    return false;
+  }
+
+  if (checkRendered()) return;
+
+  const observer = new MutationObserver(() => {
+    if (checkRendered()) {
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(elfsightApp, { childList: true, subtree: true });
+}
 
 const galleryItems = [
   {
