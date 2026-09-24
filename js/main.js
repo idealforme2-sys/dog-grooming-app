@@ -175,14 +175,14 @@ function initPromoBanner() {
   const closeBtn = document.getElementById('topPromoClose');
   const promoLink = document.getElementById('topPromoLink');
 
-  if (sessionStorage.getItem('muffley_promo_dismissed') === 'true') {
+  if (sessionStorage.getItem('doggroomernyc_promo_dismissed') === 'true') {
     banner.classList.add('hidden');
   }
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       banner.classList.add('hidden');
-      sessionStorage.setItem('muffley_promo_dismissed', 'true');
+      sessionStorage.setItem('doggroomernyc_promo_dismissed', 'true');
     });
   }
 

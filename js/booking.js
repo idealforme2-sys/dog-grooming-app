@@ -112,7 +112,7 @@ function initBookingModal() {
       goToStep(4);
     } else if (currentStep === 4) {
       closeBookingModal();
-      window.showToast('🎉 Appointment confirmed! See you at MuffleyGroom!', 'success');
+      window.showToast('🎉 Appointment confirmed! Elena will see you and your pup at doggroomer.nyc!', 'success');
     }
   });
 
