@@ -17,6 +17,18 @@
 <body>
 
   <!-- ========================================================================
+       TOP PROMO ANNOUNCEMENT BANNER
+       ======================================================================== -->
+  <div class="top-promo-banner" id="topPromoBanner">
+    <div class="top-promo-inner">
+      <span class="top-promo-badge">🎁 New Client Offer</span>
+      <span>First time at Muffley Groom? Enjoy <strong>10% OFF</strong> + free blueberry facial with code <strong>PUPLOVE</strong></span>
+      <a href="#services" class="top-promo-link" id="topPromoLink">Claim Offer 🐾</a>
+      <button class="top-promo-close" id="topPromoClose" aria-label="Dismiss banner">×</button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
        SITE HEADER / NAVBAR
        ======================================================================== -->
   <header class="site-header" id="siteHeader">
@@ -48,19 +60,26 @@
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About Us</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#consultation" class="nav-link">Prices</a>
-        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#calculator" class="nav-link">Estimator</a>
+        <a href="#transformations" class="nav-link">Makeovers</a>
+        <a href="#pricing" class="nav-link">Prices</a>
         <a href="#reviews" class="nav-link">Reviews</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#faq" class="nav-link">FAQ</a>
       </nav>
 
-      <!-- Right Action Button -->
-      <a href="tel:+799909999999" class="header-phone-btn" id="headerPhoneBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
-        </svg>
-        <span>+7 999 0 999-99-99</span>
-      </a>
+      <!-- Right Action Area: Status Pill & Call Button -->
+      <div style="display: flex; align-items: center;">
+        <div class="salon-status-pill">
+          <span class="status-dot-pulse"></span>
+          <span>Open Today • 9am - 7pm</span>
+        </div>
+        <a href="tel:+799909999999" class="header-phone-btn" id="headerPhoneBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+          </svg>
+          <span>+7 999 0 999-99-99</span>
+        </a>
+      </div>
 
       <!-- Mobile Hamburger Button -->
       <div class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
@@ -86,13 +105,18 @@
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#services">Services</a>
-      <a href="#consultation">Prices</a>
+      <a href="#calculator">Estimator</a>
+      <a href="#transformations">Makeovers</a>
+      <a href="#pricing">Prices</a>
+      <a href="#comfort-promise">Our Standards</a>
       <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="tel:+799909999999" class="btn btn-pink" style="width: 100%;">
       📞 +7 999 0 999-99-99
+
     </a>
   </div>
 
@@ -216,6 +240,13 @@
             />
           </div>
         </div>
+      </div>
+
+      <!-- Organic Wave Divider to About Us -->
+      <div class="organic-divider" style="margin-bottom: -1px; background: transparent;">
+        <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 45C240 85 480 15 720 50C960 85 1200 20 1440 55V90H0V45Z" fill="#FFFFFF"/>
+        </svg>
       </div>
     </section>
 
@@ -441,6 +472,476 @@
       </div>
     </section>
 
+    <!-- Organic Divider into Calculator -->
+    <div class="organic-divider" style="background: #FFFFFF;">
+      <svg viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 35C320 70 640 0 960 45C1200 70 1360 20 1440 35V70H0V35Z" fill="#FAF6FD"/>
+      </svg>
+    </div>
+
+    <!-- ======================================================================
+         NEW 1. BREED PRICE & CARE ESTIMATOR CALCULATOR
+         ====================================================================== -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>INSTANT ESTIMATOR</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">Calculate Your Dog's Grooming Plan</h2>
+          <p class="gallery-subheading">Personalized pricing, duration, and care frequency based on your dog's size and coat</p>
+        </div>
+
+        <div class="calculator-grid">
+          <!-- Left: Selection Options -->
+          <div class="calc-inputs-card">
+            <!-- 1. Dog Size -->
+            <div class="calc-group">
+              <div class="calc-group-title">
+                <span>1. Select Dog Size</span>
+                <span class="calc-group-subtitle">Weight category</span>
+              </div>
+              <div class="calc-chips-grid">
+                <button type="button" class="calc-chip-btn calc-size-chip active" data-size="small">
+                  <span class="calc-chip-icon">🐶</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Small / Toy</span>
+                    <span class="calc-chip-sub">&lt; 10 kg (Pomeranian, Yorkie)</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-size-chip" data-size="medium">
+                  <span class="calc-chip-icon">🐕</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Medium Dog</span>
+                    <span class="calc-chip-sub">10 - 25 kg (Corgi, Frenchie)</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-size-chip" data-size="large">
+                  <span class="calc-chip-icon">🦮</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Large Dog</span>
+                    <span class="calc-chip-sub">25 - 40 kg (Retriever, Doodle)</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-size-chip" data-size="giant">
+                  <span class="calc-chip-icon">🐕‍🦺</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Giant Breed</span>
+                    <span class="calc-chip-sub">40+ kg (Bernese, Mastiff)</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Coat Type -->
+            <div class="calc-group">
+              <div class="calc-group-title">
+                <span>2. Fur & Coat Characteristic</span>
+                <span class="calc-group-subtitle">Determines brushing effort</span>
+              </div>
+              <div class="calc-chips-grid">
+                <button type="button" class="calc-chip-btn calc-coat-chip" data-coat="short">
+                  <span class="calc-chip-icon">✨</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Short & Smooth</span>
+                    <span class="calc-chip-sub">Low maintenance coat</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-coat-chip" data-coat="double">
+                  <span class="calc-chip-icon">💨</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Double Coat</span>
+                    <span class="calc-chip-sub">Heavy seasonal shedding</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-coat-chip active" data-coat="curly">
+                  <span class="calc-chip-icon">🧸</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Curly / Doodle</span>
+                    <span class="calc-chip-sub">Prone to mats, scissoring</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-coat-chip" data-coat="silky">
+                  <span class="calc-chip-icon">🎀</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Long & Silky</span>
+                    <span class="calc-chip-sub">Fine hair, needs detangling</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. Service Package -->
+            <div class="calc-group">
+              <div class="calc-group-title">
+                <span>3. Desired Grooming Experience</span>
+                <span class="calc-group-subtitle">Choose package depth</span>
+              </div>
+              <div class="calc-chips-grid">
+                <button type="button" class="calc-chip-btn calc-package-chip" data-package="bath">
+                  <span class="calc-chip-icon">🛁</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Bath & Hygiene</span>
+                    <span class="calc-chip-sub">Refresh bath, nails & ears</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-package-chip active" data-package="style">
+                  <span class="calc-chip-icon">✂️</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">Signature Styling</span>
+                    <span class="calc-chip-sub">Full haircut & scissor work</span>
+                  </div>
+                </button>
+                <button type="button" class="calc-chip-btn calc-package-chip" data-package="royal" style="grid-column: 1 / -1;">
+                  <span class="calc-chip-icon">👑</span>
+                  <div class="calc-chip-info">
+                    <span class="calc-chip-label">VIP Royal Canine Spa Day</span>
+                    <span class="calc-chip-sub">Haircut + Blueberry facial, snout butter, paw massage & bandana</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Real-time Output Card -->
+          <div class="calc-result-card">
+            <span class="calc-result-badge">Instant Estimate 🐾</span>
+            <h3 class="calc-result-heading">Your Custom Grooming Plan</h3>
+            <p class="calc-result-desc" id="calcResultDesc">Personalized for Small Dog with curly coat receiving Signature Breed Styling.</p>
+
+            <div class="calc-price-box">
+              <span class="calc-price-label">Estimated Investment</span>
+              <div class="calc-price-val" id="calcResultPrice">$65 - $80</div>
+              <div class="calc-price-meta">
+                <span>⏱️ <strong id="calcResultTime">~75 mins</strong></span>
+                <span>📅 <strong id="calcResultFreq">Every 4 - 5 weeks</strong></span>
+              </div>
+            </div>
+
+            <div class="calc-inclusions-list">
+              <div class="calc-inclusion-item">
+                <span class="calc-check-icon">✓</span>
+                <span>Hypoallergenic organic shampoo & conditioner</span>
+              </div>
+              <div class="calc-inclusion-item">
+                <span class="calc-check-icon">✓</span>
+                <span>Tearless blueberry facial wash</span>
+              </div>
+              <div class="calc-inclusion-item">
+                <span class="calc-check-icon">✓</span>
+                <span>Stress-free claw trim & edge buffing</span>
+              </div>
+              <div class="calc-inclusion-item">
+                <span class="calc-check-icon">✓</span>
+                <span>Full hand scissoring & signature bandana</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-calc-book" id="calcBookBtn">
+              <span>Book This Exact Package</span>
+              <span>🐾</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Divider into Transformations -->
+    <div class="organic-divider" style="background: #FAF6FD;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 20C360 60 720 0 1080 40C1260 60 1380 30 1440 20V60H0V20Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+
+    <!-- ======================================================================
+         NEW 2. BEFORE & AFTER TRANSFORMATION INTERACTIVE SLIDER
+         ====================================================================== -->
+    <section class="transformations-section" id="transformations">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>REAL MAKEOVERS</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">The Muffley Glow-Up Experience</h2>
+          <p class="gallery-subheading">Drag the slider horizontally to reveal our signature teddy bear cut makeover!</p>
+        </div>
+
+        <div class="slider-wrapper-box">
+          <div class="ba-slider-container" id="baSliderContainer">
+            <!-- Badges -->
+            <span class="ba-badge after">✨ AFTER • Fluffy Glow-Up</span>
+            <span class="ba-badge before">BEFORE • Scruffy Coat</span>
+
+            <!-- Underneath: Before Image -->
+            <img 
+              src="assets/images/before_grooming_doodle.jpg" 
+              alt="Golden doodle before grooming with overgrown scruffy fur" 
+              class="ba-image ba-image-before" 
+            />
+
+            <!-- Top Clipped Layer: After Image -->
+            <div class="ba-image-after-wrap" id="baAfterWrap">
+              <img 
+                src="assets/images/after_grooming_doodle.jpg" 
+                alt="Golden doodle after luxury grooming with pristine teddy bear haircut" 
+                class="ba-image" 
+              />
+            </div>
+
+            <!-- Draggable Divider Line & Handle -->
+            <div class="ba-divider-line" id="baDividerLine">
+              <div class="ba-handle-btn" aria-label="Drag comparison slider">
+                <span>‹</span>
+                <span>🐾</span>
+                <span>›</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Caption & Tip -->
+          <div class="ba-caption-banner">
+            <span class="ba-caption-text">
+              <strong>Archie (Mini Goldendoodle)</strong> • Winter overgrown coat transformed into a pristine Teddy Bear cut in 75 minutes.
+            </span>
+            <span class="ba-instruction-hint">
+              <span>↔</span> Drag slider or swipe on mobile
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Divider into Pricing -->
+    <div class="organic-divider" style="background: #FFFFFF;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30C240 0 480 50 720 20C960 -10 1200 45 1440 15V60H0V30Z" fill="#FDFBFE"/>
+      </svg>
+    </div>
+
+    <!-- ======================================================================
+         NEW 3. TRANSPARENT 3-TIER SPA PRICING MENU
+         ====================================================================== -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>TRANSPARENT MENU</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">Simple, Transparent Spa Packages</h2>
+          <p class="gallery-subheading">No hidden fees. Every package includes gentle handling, nail clipping, and paw care.</p>
+        </div>
+
+        <!-- Size Toggle Switch -->
+        <div class="pricing-size-switch">
+          <button type="button" class="size-switch-btn active" data-size="small">Small Dog (&lt;10kg)</button>
+          <button type="button" class="size-switch-btn" data-size="medium">Medium Dog (10-25kg)</button>
+          <button type="button" class="size-switch-btn" data-size="large">Large Dog (25kg+)</button>
+        </div>
+
+        <!-- 3 Pricing Cards -->
+        <div class="pricing-grid-3">
+          <!-- Tier 1: Fresh & Clean Bath -->
+          <div class="pricing-tier-card">
+            <div class="tier-header">
+              <h3 class="tier-title">Fresh & Clean Bath</h3>
+              <p class="tier-desc">Essential hygiene, deep coat cleansing & gentle blowout.</p>
+              <div class="tier-price-wrap">
+                <span class="tier-currency">from</span>
+                <span class="tier-amount" id="priceValBath">$45</span>
+                <span class="tier-period">/ session</span>
+              </div>
+              <div class="tier-duration">
+                <span>⏱️ Approx.</span>
+                <strong id="priceTimeBath">45 mins</strong>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Double wash with organic lavender shampoo</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Warm towel wrap & fluff blowout</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Gentle ear cleaning & paw pad hygiene</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Nail trimming & rotary edge buffing</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Refreshing botanical dog cologne spritz</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-outline-pink trigger-tier-book" data-tier="Bath & Hygiene" style="width: 100%;">
+              <span>Book Fresh Bath</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- Tier 2: Signature Breed Styling (Featured) -->
+          <div class="pricing-tier-card featured">
+            <div class="popular-badge">⭐ Most Popular</div>
+            <div class="tier-header">
+              <h3 class="tier-title">Signature Breed Styling</h3>
+              <p class="tier-desc">Full professional haircut tailored to your dog's breed & lifestyle.</p>
+              <div class="tier-price-wrap">
+                <span class="tier-currency">from</span>
+                <span class="tier-amount" id="priceValStyle">$70</span>
+                <span class="tier-period">/ session</span>
+              </div>
+              <div class="tier-duration">
+                <span>⏱️ Approx.</span>
+                <strong id="priceTimeStyle">65 mins</strong>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span><strong>Everything in Fresh & Clean Bath</strong></span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Full body precision breed styling & scissor work</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Teddy bear facial trim or breed standard cut</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Sanitary trim & paw pad feathering</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Complimentary luxury bandana or bowtie</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-pink trigger-tier-book" data-tier="Haircut & Styling" style="width: 100%;">
+              <span>Book Signature Styling</span>
+              <span>🐾</span>
+            </button>
+          </div>
+
+          <!-- Tier 3: VIP Royal Canine Spa Day -->
+          <div class="pricing-tier-card">
+            <div class="tier-header">
+              <h3 class="tier-title">VIP Royal Spa Day</h3>
+              <p class="tier-desc">The ultimate head-to-paw luxury pampering with wellness treatments.</p>
+              <div class="tier-price-wrap">
+                <span class="tier-currency">from</span>
+                <span class="tier-amount" id="priceValRoyal">$95</span>
+                <span class="tier-period">/ session</span>
+              </div>
+              <div class="tier-duration">
+                <span>⏱️ Approx.</span>
+                <strong id="priceTimeRoyal">85 mins</strong>
+              </div>
+            </div>
+
+            <ul class="tier-features-list">
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span><strong>Everything in Signature Styling</strong></span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Tearless antioxidant Blueberry Facial scrub</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Hydrating paw butter balm & snout protection</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Ultrasonic teeth cleaning & minty fresh breath</span>
+              </li>
+              <li class="tier-feature-item">
+                <span class="tier-check">✓</span>
+                <span>Special souvenir photo print & luxury treat bag</span>
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-outline-purple trigger-tier-book" data-tier="Full Spa Treatment" style="width: 100%;">
+              <span>Book Royal Spa Day</span>
+              <span>👑</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Divider into Comfort Promise -->
+    <div class="organic-divider" style="background: #F5EFFC;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 25C360 60 720 0 1080 35C1260 55 1380 20 1440 25V60H0V25Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+
+    <!-- ======================================================================
+         NEW 4. THE MUFFLEY COMFORT PROMISE (STRESS-FREE STANDARDS)
+         ====================================================================== -->
+    <section class="comfort-section" id="comfort-promise">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>OUR CARE PHILOSOPHY</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">The Muffley Comfort Promise</h2>
+          <p class="gallery-subheading">We believe grooming should feel like a cozy spa day, never a stressful chore.</p>
+        </div>
+
+        <div class="comfort-grid-4">
+          <div class="comfort-card">
+            <div class="comfort-icon-box">🛋️</div>
+            <h3 class="comfort-card-title">Zero-Cage Atmosphere</h3>
+            <p class="comfort-card-desc">No cramped metal crates. Dogs relax in supervised open playpens with plush orthopedic dog beds and soft classical music.</p>
+          </div>
+
+          <div class="comfort-card">
+            <div class="comfort-icon-box">🎧</div>
+            <h3 class="comfort-card-title">Whisper-Quiet Dryers</h3>
+            <p class="comfort-card-desc">We use variable low-decibel blowers and gentle noise-dampening Happy Hoodies to safeguard sound-sensitive dog ears.</p>
+          </div>
+
+          <div class="comfort-card">
+            <div class="comfort-icon-box">🫐</div>
+            <h3 class="comfort-card-title">Organic Blueberry Spa</h3>
+            <p class="comfort-card-desc">100% soap-free, biodegradable shampoos and tearless blueberry facial scrubs that protect delicate eyes and hydrate sensitive skin.</p>
+          </div>
+
+          <div class="comfort-card">
+            <div class="comfort-icon-box">🏅</div>
+            <h3 class="comfort-card-title">Fear-Free Certified Stylists</h3>
+            <p class="comfort-card-desc">Trained in canine body language and positive reinforcement. We take regular cuddle breaks and give healthy organic treats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Divider into Consultation -->
+    <div class="organic-divider" style="background: #FFFFFF;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30C360 0 720 50 1080 20C1260 5 1380 40 1440 25V60H0V30Z" fill="#F4EFFC"/>
+      </svg>
+    </div>
+
     <!-- ======================================================================
          4. CONSULTATION / HELP BANNER
          ====================================================================== -->
@@ -561,11 +1062,90 @@
     </section>
 
     <!-- ======================================================================
-         6. VALUE PROPS / TRUST BADGES STRIP
+         6. VERIFIED REVIEWS & HAPPY PAWS WALL
          ====================================================================== -->
-    <section class="value-props-section" id="reviews">
+    <section class="reviews-section" id="reviews">
       <div class="container">
-        <div class="value-props-strip">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>WHAT CLIENTS SAY</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">Loved by 450+ Dogs & Their Families</h2>
+          <p class="gallery-subheading">Real verified feedback from local pet parents who trust Muffley Groom</p>
+          
+          <div class="reviews-summary-badge">
+            <span class="reviews-stars">★★★★★</span>
+            <strong>4.9 / 5.0 Rating</strong>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">• 450+ Google & Local Reviews</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid-4">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div>
+              <div class="review-card-stars">★★★★★</div>
+              <p class="review-quote">"They treated my anxious toy poodle like absolute royalty. Usually she trembles at groomers, but she was calmly wagging her tail when I picked her up. The teddy bear cut is perfection!"</p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-pet-avatar">🐩</div>
+              <div class="review-author-info">
+                <span class="review-author-name">Sarah & Mark M.</span>
+                <span class="review-pet-breed">Coco • Toy Poodle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div>
+              <div class="review-card-stars">★★★★★</div>
+              <p class="review-quote">"Hands down the best doodle haircut in the city. No choppy uneven lines, his coat smelled amazing for 3 whole weeks, and they even sent a progress video during the bath!"</p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-pet-avatar">🐕</div>
+              <div class="review-author-info">
+                <span class="review-author-name">David K.</span>
+                <span class="review-pet-breed">Winston • Goldendoodle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div>
+              <div class="review-card-stars">★★★★★</div>
+              <p class="review-quote">"My French Bulldog is notoriously stubborn about his paws being touched. The groomers here were so patient, calm, and gentle. Zero stress and perfectly rounded nails."</p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-pet-avatar">🐾</div>
+              <div class="review-author-info">
+                <span class="review-author-name">Elena V.</span>
+                <span class="review-pet-breed">Rocky • French Bulldog</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="review-card">
+            <div>
+              <div class="review-card-stars">★★★★★</div>
+              <p class="review-quote">"The de-shedding mud bath and blueberry facial were miraculous for my Samoyed. He came out looking like a walking cloud and shed 90% less at home. Incredible service!"</p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-pet-avatar">✨</div>
+              <div class="review-author-info">
+                <span class="review-author-name">Anna & Alex T.</span>
+                <span class="review-pet-breed">Bella • Samoyed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges Strip -->
+        <div class="value-props-strip" style="margin-top: 48px;">
           <div class="value-prop-item">
             <div class="value-prop-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -586,7 +1166,7 @@
             </div>
             <div class="value-prop-text">
               <span class="value-prop-title">Premium Products</span>
-              <span class="value-prop-subtitle">Only the best for your dogs</span>
+              <span class="value-prop-subtitle">Organic botanical formulas</span>
             </div>
           </div>
 
@@ -597,8 +1177,8 @@
               </svg>
             </div>
             <div class="value-prop-text">
-              <span class="value-prop-title">Expert Groomers</span>
-              <span class="value-prop-subtitle">Trained & experienced</span>
+              <span class="value-prop-title">Certified Stylists</span>
+              <span class="value-prop-subtitle">Fear-free & experienced</span>
             </div>
           </div>
 
@@ -609,8 +1189,112 @@
               </svg>
             </div>
             <div class="value-prop-text">
-              <span class="value-prop-title">Clean & Comfortable</span>
-              <span class="value-prop-subtitle">Hygienic & relaxing dog salon 🐾</span>
+              <span class="value-prop-title">Zero-Cage Salon</span>
+              <span class="value-prop-subtitle">Clean, relaxing atmosphere 🐾</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organic Divider into FAQ -->
+    <div class="organic-divider" style="background: #F5EEFB;">
+      <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30C240 60 480 10 720 40C960 70 1200 15 1440 30V60H0V30Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+
+    <!-- ======================================================================
+         7. INTERACTIVE FAQ ACCORDION SECTION
+         ====================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="text-center">
+          <div class="section-title-badge">
+            <span class="paw-icon text-pink">🐾</span>
+            <span>FREQUENT QUESTIONS</span>
+            <span class="paw-icon text-pink">🐾</span>
+          </div>
+          <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">Got Questions? We Have Answers!</h2>
+          <p class="gallery-subheading">Everything you need to know about our salon care, safety rules & appointments</p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <button type="button" class="faq-question-btn" aria-expanded="true">
+              <span>What vaccinations does my dog require before visiting?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                To guarantee the safety and health of all furry guests in our salon, we require up-to-date Rabies, DHPP (Distemper, Hepatitis, Parvovirus, Parainfluenza), and Bordetella (kennel cough) vaccinations. You can bring a digital copy or paper certificate on your first appointment.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>How long does a full grooming session typically take?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                Most sessions take between 60 to 90 minutes depending on your pet's size, coat condition, and chosen service package. We never rush our groomers because gentle, stress-free handling takes precedence. We will text you 15 minutes before your pup is ready for pickup!
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Can I stay and watch while my dog is being groomed?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                Dogs often get overly excited or anxious when seeing their owners nearby, which can make scissor work around sensitive areas less safe. You are very welcome to relax in our comfortable glass-partitioned reception lounge with free coffee and Wi-Fi while seeing your pup from afar.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>My dog gets nervous or dislikes nail trims. Can you handle them?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                Absolutely! Our stylists are certified in low-stress, fear-free handling. We use gentle distraction techniques, lick mats with peanut butter, soothing lavender aromatherapy, and noise-reducing Happy Hoodies to ensure nervous dogs feel safe and calm.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>How often should my dog be professionally groomed?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                For curly or long coats (Doodles, Poodles, Shih Tzus), we recommend a professional grooming every 4 to 6 weeks to prevent painful matting. Short-haired breeds typically thrive on a bath and nail trim every 6 to 8 weeks. You can also use our interactive Estimator above for personalized recommendations!
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn" aria-expanded="false">
+              <span>Do you accept cats or only dogs?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-pane">
+              <p class="faq-answer-text">
+                Yes! We offer specialized feline grooming and de-shedding sessions on dedicated quiet days to ensure our cat guests are not disturbed by barking dogs. Contact us in advance to book a feline spa session.
+              </p>
             </div>
           </div>
         </div>
@@ -964,6 +1648,22 @@
       <button class="lightbox-nav-btn lightbox-next" id="lightboxNextBtn" aria-label="Next Photo">&#10095;</button>
     </div>
   </div>
+
+  <!-- ========================================================================
+       FLOATING BOTTOM QUICK-ACTION BAR
+       ======================================================================== -->
+  <aside class="floating-quick-bar" id="floatingQuickBar" aria-label="Quick Actions">
+    <button type="button" class="floating-book-btn" id="floatingQuickBook" aria-label="Book Grooming Appointment">
+      <span>🐾</span>
+      <span>Book Grooming</span>
+    </button>
+    <a href="https://wa.me/79990999999" target="_blank" rel="noopener" class="floating-circle-btn floating-whatsapp-btn" id="floatingWhatsappBtn" aria-label="Chat on WhatsApp">
+      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.63c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"/></svg>
+    </a>
+    <button type="button" class="floating-circle-btn floating-top-btn" id="floatingScrollTop" aria-label="Scroll to top of page">
+      ▲
+    </button>
+  </aside>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>

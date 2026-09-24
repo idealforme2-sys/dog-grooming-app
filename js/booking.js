@@ -133,7 +133,7 @@ function initBookingModal() {
   }
 }
 
-function openBookingModal(preselectedService) {
+function openBookingModal(preselectedService, preselectedSize, targetStep = 1) {
   const modalOverlay = document.getElementById('bookingModal');
   if (!modalOverlay) return;
 
@@ -141,15 +141,31 @@ function openBookingModal(preselectedService) {
     bookingData.service = preselectedService;
     const chips = modalOverlay.querySelectorAll('.service-chip');
     chips.forEach(c => {
-      if (c.getAttribute('data-value') === preselectedService) {
+      if (c.getAttribute('data-value').toLowerCase().includes(preselectedService.toLowerCase()) || 
+          preselectedService.toLowerCase().includes(c.getAttribute('data-value').toLowerCase())) {
         c.classList.add('selected');
+        bookingData.service = c.getAttribute('data-value');
       } else {
         c.classList.remove('selected');
       }
     });
   }
 
-  goToStep(1);
+  if (preselectedSize) {
+    bookingData.dogSize = preselectedSize;
+    const sizeChips = modalOverlay.querySelectorAll('.pet-type-chip');
+    sizeChips.forEach(c => {
+      if (c.getAttribute('data-value').toLowerCase().includes(preselectedSize.toLowerCase()) || 
+          preselectedSize.toLowerCase().includes(c.getAttribute('data-value').toLowerCase())) {
+        c.classList.add('selected');
+        bookingData.dogSize = c.getAttribute('data-value');
+      } else {
+        c.classList.remove('selected');
+      }
+    });
+  }
+
+  goToStep(targetStep);
   modalOverlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -161,6 +177,9 @@ function closeBookingModal() {
     document.body.style.overflow = '';
   }
 }
+
+window.openBookingModal = openBookingModal;
+window.closeBookingModal = closeBookingModal;
 
 function goToStep(step) {
   currentStep = step;
