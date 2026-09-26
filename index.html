@@ -755,7 +755,7 @@
     </div>
 
     <!-- ======================================================================
-         NEW 2. BEFORE & AFTER TRANSFORMATION INTERACTIVE SLIDER
+         2. BEFORE & AFTER TRANSFORMATION SHOWCASE (SIDE-BY-SIDE)
          ====================================================================== -->
     <section class="transformations-section" id="transformations">
       <div class="container">
@@ -766,49 +766,131 @@
             <span class="paw-icon text-pink">🐾</span>
           </div>
           <h2 class="gallery-heading" style="font-size: 2.2rem; margin-top: 10px;">The Signature Glow-Up Experience</h2>
-          <p class="gallery-subheading">Drag the slider horizontally to reveal our signature teddy bear cut makeover!</p>
+          <p class="gallery-subheading">Witness genuine transformations by Elena. Select a pet below to view their journey from overgrown coat to red-carpet finish.</p>
         </div>
 
-        <div class="slider-wrapper-box">
-          <div class="ba-slider-container" id="baSliderContainer">
-            <!-- Badges -->
-            <span class="ba-badge after">✨ AFTER • Fluffy Glow-Up</span>
-            <span class="ba-badge before">BEFORE • Scruffy Coat</span>
-
-            <!-- Underneath: Before Image -->
-            <img 
-              src="assets/images/before_grooming_doodle.jpg" 
-              alt="Adorable apricot toy poodle puppy before grooming with overgrown shaggy fur" 
-              class="ba-image ba-image-before" 
-            />
-
-            <!-- Top Clipped Layer: After Image -->
-            <div class="ba-image-after-wrap" id="baAfterWrap">
-              <img 
-                src="assets/images/after_grooming_doodle.jpg" 
-                alt="Adorable apricot toy poodle puppy after luxury grooming with pristine round teddy bear haircut and bowtie" 
-                class="ba-image" 
-              />
+        <!-- Multi-Pet Filter Tabs -->
+        <div class="makeover-tabs-wrap">
+          <button type="button" class="makeover-tab-btn active" data-pet="milo">
+            <span class="tab-emoji">🧸</span>
+            <div class="tab-meta">
+              <span class="tab-name">Milo</span>
+              <span class="tab-breed">Apricot Toy Poodle</span>
             </div>
+            <span class="tab-style-pill">Teddy Bear Cut</span>
+          </button>
+          
+          <button type="button" class="makeover-tab-btn" data-pet="bella">
+            <span class="tab-emoji">🎀</span>
+            <div class="tab-meta">
+              <span class="tab-name">Bella</span>
+              <span class="tab-breed">Cream Pomeranian</span>
+            </div>
+            <span class="tab-style-pill">Boo Fluff Styling</span>
+          </button>
 
-            <!-- Draggable Divider Line & Handle -->
-            <div class="ba-divider-line" id="baDividerLine">
-              <div class="ba-handle-btn" aria-label="Drag comparison slider">
-                <span>‹</span>
-                <span>🐾</span>
-                <span>›</span>
+          <button type="button" class="makeover-tab-btn" data-pet="archie">
+            <span class="tab-emoji">🐶</span>
+            <div class="tab-meta">
+              <span class="tab-name">Archie</span>
+              <span class="tab-breed">Mini Goldendoodle</span>
+            </div>
+            <span class="tab-style-pill">De-Matting & Trim</span>
+          </button>
+        </div>
+
+        <!-- Side-by-Side Dual Comparison Cards Container -->
+        <div class="makeover-showcase-box" id="makeoverShowcaseBox">
+          <div class="makeover-cards-grid">
+            
+            <!-- BEFORE CARD -->
+            <div class="makeover-card before-card">
+              <div class="makeover-card-header">
+                <span class="makeover-status-badge before">
+                  <span class="status-dot"></span>
+                  <span>BEFORE GROOMING</span>
+                </span>
+                <span class="makeover-stage-hint" id="makeoverBeforeHint">7 Weeks Overgrown</span>
+              </div>
+              <div class="makeover-img-frame">
+                <img 
+                  id="makeoverBeforeImg"
+                  src="assets/images/makeover_poodle_before.jpg" 
+                  alt="Dog before grooming with overgrown coat" 
+                  class="makeover-card-image" 
+                />
+                <div class="makeover-overlay-tag before" id="makeoverBeforeTag">Unbrushed & Shaggy Coat</div>
+              </div>
+              <div class="makeover-card-details">
+                <h4 class="card-detail-title">Initial Condition:</h4>
+                <ul class="condition-checklist before" id="makeoverBeforePoints">
+                  <li><span class="cross-icon">✕</span> Unruly curls covering eyes and face</li>
+                  <li><span class="cross-icon">✕</span> Dry tangled ends and early coat matting</li>
+                  <li><span class="cross-icon">✕</span> Overgrown nails and unshaped paws</li>
+                </ul>
               </div>
             </div>
+
+            <!-- AFTER CARD (GLOW-UP) -->
+            <div class="makeover-card after-card">
+              <div class="makeover-card-header">
+                <span class="makeover-status-badge after">
+                  <span class="sparkle-icon">✨</span>
+                  <span>AFTER GLOW-UP</span>
+                </span>
+                <span class="makeover-stage-hint highlight" id="makeoverAfterHint">Signature Finish</span>
+              </div>
+              <div class="makeover-img-frame">
+                <img 
+                  id="makeoverAfterImg"
+                  src="assets/images/makeover_poodle_after.jpg" 
+                  alt="Dog after luxury grooming with pristine haircut" 
+                  class="makeover-card-image" 
+                />
+                <div class="makeover-overlay-tag after" id="makeoverAfterTag">Freshly Styled & Fluffed</div>
+              </div>
+              <div class="makeover-card-details">
+                <h4 class="card-detail-title">Elena's Care Applied:</h4>
+                <ul class="condition-checklist after" id="makeoverAfterPoints">
+                  <li><span class="check-icon">✓</span> Sculpted round teddy bear face and rounded ears</li>
+                  <li><span class="check-icon">✓</span> Warm blueberry facial + deep coat conditioning</li>
+                  <li><span class="check-icon">✓</span> Hand-scissored paws, sanitized sanitary trim & silk bowtie</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Caption & Tip -->
-          <div class="ba-caption-banner">
-            <span class="ba-caption-text">
-              <strong>Milo (Apricot Toy Poodle)</strong> • Winter overgrown coat transformed into a pristine round Teddy Bear cut in 60 minutes.
-            </span>
-            <span class="ba-instruction-hint">
-              <span>↔</span> Drag slider or swipe on mobile
-            </span>
+          <!-- Bottom Metrics & CTA Strip -->
+          <div class="makeover-stats-bar">
+            <div class="stat-pill-item">
+              <span class="stat-icon">⏱️</span>
+              <div class="stat-text">
+                <span class="stat-val" id="makeoverDuration">60 Minutes</span>
+                <span class="stat-lbl">Session Time</span>
+              </div>
+            </div>
+            
+            <div class="stat-pill-item">
+              <span class="stat-icon">🫧</span>
+              <div class="stat-text">
+                <span class="stat-val">1-on-1 Cage Free</span>
+                <span class="stat-lbl">Gentle Handling</span>
+              </div>
+            </div>
+
+            <div class="stat-pill-item">
+              <span class="stat-icon">🌸</span>
+              <div class="stat-text">
+                <span class="stat-val">Blueberry Facial</span>
+                <span class="stat-lbl">Included Free</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-hero-cta trigger-booking-modal makeover-book-btn" id="makeoverBookBtn" data-service="Full Grooming Package">
+              <span>Book This Cut</span>
+              <span>🐾</span>
+            </button>
           </div>
         </div>
       </div>

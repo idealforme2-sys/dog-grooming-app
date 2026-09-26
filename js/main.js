@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initPromoBanner();
   initPriceEstimator();
-  initBeforeAfterSlider();
+  initMakeoverShowcase();
   initPricingSwitcher();
   initFaqAccordion();
   initFloatingQuickBar();
+  initCursorSparkles();
 });
 
 /* --------------------------------------------------------------------------
@@ -315,57 +316,146 @@ function initPriceEstimator() {
 }
 
 /* --------------------------------------------------------------------------
-   8. Before & After Transformation Slider
+   8. Before & After Transformation Multi-Pet Showcase
    -------------------------------------------------------------------------- */
-function initBeforeAfterSlider() {
-  const container = document.getElementById('baSliderContainer');
-  if (!container) return;
-
-  const afterWrap = document.getElementById('baAfterWrap');
-  const divider = document.getElementById('baDividerLine');
-  if (!afterWrap || !divider) return;
-
-  let isDragging = false;
-
-  function updateSliderPosition(clientX) {
-    const rect = container.getBoundingClientRect();
-    let percentage = ((clientX - rect.left) / rect.width) * 100;
-    if (percentage < 5) percentage = 5;
-    if (percentage > 95) percentage = 95;
-
-    afterWrap.style.width = `${percentage}%`;
-    divider.style.left = `${percentage}%`;
+const MAKEOVER_DATA = {
+  milo: {
+    beforeImg: 'assets/images/makeover_poodle_before.jpg',
+    afterImg: 'assets/images/makeover_poodle_after.jpg',
+    beforeHint: '7 Weeks Overgrown',
+    afterHint: 'Signature Finish',
+    beforeTag: 'Unbrushed & Shaggy Coat',
+    afterTag: 'Freshly Styled & Fluffed',
+    beforePoints: [
+      'Unruly curls covering eyes and face',
+      'Dry tangled ends and early coat matting',
+      'Overgrown nails and unshaped paws'
+    ],
+    afterPoints: [
+      'Sculpted round teddy bear face and rounded ears',
+      'Warm blueberry facial + deep coat conditioning',
+      'Hand-scissored paws, sanitized sanitary trim & silk bowtie'
+    ],
+    duration: '60 Minutes',
+    service: 'Teddy Bear Package (Milo)'
+  },
+  bella: {
+    beforeImg: 'assets/images/makeover_pom_before.jpg',
+    afterImg: 'assets/images/makeover_pom_after.jpg',
+    beforeHint: 'Heavy Shedding & Puffy',
+    afterHint: 'Boo Fluff Masterpiece',
+    beforeTag: 'Overgrown Double Coat',
+    afterTag: 'Sculpted Boo Teddy Trim',
+    beforePoints: [
+      'Heavy undercoat shedding and tangled back fluff',
+      'Ears hidden beneath uneven overgrown fur',
+      'Uneven paw feathering touching ground'
+    ],
+    afterPoints: [
+      'Full de-shedding warm blowout + organic conditioner',
+      'Signature rounded Boo silhouette and clean rounded ears',
+      'Neat cat-like paws + cute pink silk bow accessory'
+    ],
+    duration: '50 Minutes',
+    service: 'Pomeranian Boo Makeover (Bella)'
+  },
+  archie: {
+    beforeImg: 'assets/images/makeover_doodle_before.jpg',
+    afterImg: 'assets/images/makeover_doodle_after.jpg',
+    beforeHint: '8 Weeks Overgrown',
+    afterHint: 'Clean & Fluffy Finish',
+    beforeTag: 'Heavy Matted Curls',
+    afterTag: 'Scissored Teddy Styling',
+    beforePoints: [
+      'Severe face matting and obscured eyesight',
+      'Thick winter undercoat trapping dirt & debris',
+      'Long overgrown pads collecting moisture'
+    ],
+    afterPoints: [
+      'Gentle pain-free de-matting & moisture coat mask',
+      'Full body hand-scissoring with soft puppy muzzle',
+      'Sanitary hygiene trim, ear cleaning & bandana'
+    ],
+    duration: '75 Minutes',
+    service: 'Doodle Spa Makeover (Archie)'
   }
+};
 
-  container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    updateSliderPosition(e.clientX);
+function initMakeoverShowcase() {
+  const tabButtons = document.querySelectorAll('.makeover-tab-btn');
+  const beforeImg = document.getElementById('makeoverBeforeImg');
+  const afterImg = document.getElementById('makeoverAfterImg');
+  const beforeHint = document.getElementById('makeoverBeforeHint');
+  const afterHint = document.getElementById('makeoverAfterHint');
+  const beforeTag = document.getElementById('makeoverBeforeTag');
+  const afterTag = document.getElementById('makeoverAfterTag');
+  const beforePoints = document.getElementById('makeoverBeforePoints');
+  const afterPoints = document.getElementById('makeoverAfterPoints');
+  const durationEl = document.getElementById('makeoverDuration');
+  const bookBtn = document.getElementById('makeoverBookBtn');
+
+  if (!tabButtons.length || !beforeImg || !afterImg) return;
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const petKey = btn.getAttribute('data-pet');
+      const petData = MAKEOVER_DATA[petKey];
+      if (!petData) return;
+
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Subtle crossfade animation
+      beforeImg.style.opacity = '0.3';
+      afterImg.style.opacity = '0.3';
+
+      setTimeout(() => {
+        beforeImg.src = petData.beforeImg;
+        afterImg.src = petData.afterImg;
+
+        if (beforeHint) beforeHint.textContent = petData.beforeHint;
+        if (afterHint) afterHint.textContent = petData.afterHint;
+        if (beforeTag) beforeTag.textContent = petData.beforeTag;
+        if (afterTag) afterTag.textContent = petData.afterTag;
+        if (durationEl) durationEl.textContent = petData.duration;
+        if (bookBtn) bookBtn.setAttribute('data-service', petData.service);
+
+        if (beforePoints) {
+          beforePoints.innerHTML = petData.beforePoints
+            .map(pt => `<li><span class="cross-icon">✕</span> ${pt}</li>`)
+            .join('');
+        }
+
+        if (afterPoints) {
+          afterPoints.innerHTML = petData.afterPoints
+            .map(pt => `<li><span class="check-icon">✓</span> ${pt}</li>`)
+            .join('');
+        }
+
+        beforeImg.style.opacity = '1';
+        afterImg.style.opacity = '1';
+      }, 180);
+    });
   });
+}
 
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    updateSliderPosition(e.clientX);
-  });
+/* --------------------------------------------------------------------------
+   Cute Paw Click Sparkles
+   -------------------------------------------------------------------------- */
+function initCursorSparkles() {
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
 
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
+  document.addEventListener('click', (e) => {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'paw-click-sparkle';
+    sparkle.innerHTML = '✨';
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+    document.body.appendChild(sparkle);
 
-  // Touch Support for Mobile
-  container.addEventListener('touchstart', (e) => {
-    if (e.touches.length > 0) {
-      isDragging = true;
-      updateSliderPosition(e.touches[0].clientX);
-    }
-  }, { passive: true });
-
-  window.addEventListener('touchmove', (e) => {
-    if (!isDragging || e.touches.length === 0) return;
-    updateSliderPosition(e.touches[0].clientX);
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    isDragging = false;
+    setTimeout(() => {
+      sparkle.remove();
+    }, 500);
   });
 }
 
