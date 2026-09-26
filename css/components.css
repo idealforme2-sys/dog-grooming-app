@@ -27,6 +27,7 @@
   align-items: center;
   justify-content: space-between;
   height: 84px;
+  gap: 16px;
 }
 
 /* Brand Logo */
@@ -35,6 +36,8 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo-paw-badge {
@@ -43,60 +46,77 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: transform var(--transition-spring);
 }
 
+.logo-paw-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .brand-logo:hover .logo-paw-badge {
-  transform: scale(1.08) rotate(-6deg);
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .brand-text-wrap {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-name {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1;
-  display: flex;
+  line-height: 1.1;
+  display: inline-flex;
   align-items: baseline;
+  white-space: nowrap;
 }
 
 .brand-name .part-muffley {
   color: var(--primary-purple);
+  white-space: nowrap;
 }
 
 .brand-name .part-groom {
   color: var(--primary-pink);
+  white-space: nowrap;
+  margin-left: 2px;
 }
 
 .brand-sub {
   font-family: var(--font-heading);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-top: 3px;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 /* Navigation Menu */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 18px;
+  flex-shrink: 1;
 }
 
 .nav-link {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-dark);
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -123,20 +143,29 @@
   width: 100%;
 }
 
-/* Header Phone Action */
+/* Header Phone & DM Action */
 .header-phone-btn {
   background-color: var(--primary-pink);
   color: var(--text-white);
-  padding: 10px 24px;
+  padding: 9px 20px;
   border-radius: var(--radius-pill);
   font-family: var(--font-heading);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 15px rgba(234, 77, 137, 0.35);
+  box-shadow: 0 4px 15px rgba(234, 77, 137, 0.3);
   transition: all var(--transition-spring);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.salon-status-pill {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 7px 14px;
+  font-size: 0.82rem;
 }
 
 .header-phone-btn:hover {
@@ -1180,7 +1209,8 @@ a[href*="elfsight.com"] {
   .nav-container { height: 68px; }
   .brand-name { font-size: 1.35rem; }
   .logo-paw-badge { width: 38px; height: 38px; }
-  .logo-paw-badge svg { width: 34px; height: 34px; }
+  .logo-paw-badge svg,
+  .logo-paw-badge img { width: 34px; height: 34px; }
   .nav-menu, .header-phone-btn { display: none; }
   .mobile-nav-toggle { 
     display: flex; 

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA4D89" />
+      <stop offset="100%" stop-color="#C2255C" />
+    </linearGradient>
+
+    <!-- Golden Sparkle Gradient -->
+    <linearGradient id="sparkleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3BF" />
+      <stop offset="100%" stop-color="#FCC419" />
+    </linearGradient>
+
+    <!-- Subtle Soft Drop Shadow -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#C2255C" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Container -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#bgGrad)" filter="url(#badgeShadow)"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="17.5" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Left Floppy Dog Ear -->
+  <path d="M16 19C11.5 22 9 30 11.5 38C12.5 41 15.5 41 18 38C20 35.5 21 27 18.5 20.5L16 19Z" fill="#2E1D5A"/>
+  
+  <!-- Right Floppy Dog Ear -->
+  <path d="M48 19C52.5 22 55 30 52.5 38C51.5 41 48.5 41 46 38C44 35.5 43 27 45.5 20.5L48 19Z" fill="#2E1D5A"/>
+
+  <!-- Fluffy Head Base -->
+  <circle cx="32" cy="31" r="16" fill="#FFFFFF"/>
+
+  <!-- Cute Snout / Muzzle Area -->
+  <ellipse cx="32" cy="35.5" rx="8" ry="6" fill="#FFF0F6"/>
+
+  <!-- Cute Heart-Shaped Puppy Nose -->
+  <path d="M29 33.2C29 32 35 32 35 33.2C35 35 33.2 36.4 32 36.4C30.8 36.4 29 35 29 33.2Z" fill="#2E1D5A"/>
+
+  <!-- Sweet Puppy Smile -->
+  <path d="M30.2 37.2C30.8 38.4 33.2 38.4 33.8 37.2" stroke="#2E1D5A" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- Expressive Big Sparkling Eyes -->
+  <ellipse cx="25" cy="27.5" rx="2.5" ry="2.8" fill="#2E1D5A"/>
+  <ellipse cx="39" cy="27.5" rx="2.5" ry="2.8" fill="#2E1D5A"/>
+
+  <!-- Eye Catchlights -->
+  <circle cx="26" cy="26.3" r="1.1" fill="#FFFFFF"/>
+  <circle cx="24.2" cy="28.4" r="0.5" fill="#FFFFFF"/>
+  <circle cx="40" cy="26.3" r="1.1" fill="#FFFFFF"/>
+  <circle cx="38.2" cy="28.4" r="0.5" fill="#FFFFFF"/>
+
+  <!-- Soft Rosy Cheeks -->
+  <ellipse cx="21.5" cy="33.5" rx="2.2" ry="1.4" fill="#FFC9DB" opacity="0.8"/>
+  <ellipse cx="42.5" cy="33.5" rx="2.2" ry="1.4" fill="#FFC9DB" opacity="0.8"/>
+
+  <!-- Grooming Bowtie / Shears Detail at Collar -->
+  <path d="M24 47.5L32 50.8L40 47.5L39 53L32 50.8L25 53Z" fill="url(#sparkleGrad)"/>
+  <circle cx="32" cy="50.8" r="1.8" fill="#2E1D5A"/>
+
+  <!-- Sparkle Star (Top Right) -->
+  <path d="M49 9L50 12.2L53.2 13.2L50 14.2L49 17.4L48 14.2L44.8 13.2L48 12.2Z" fill="url(#sparkleGrad)"/>
+  <!-- Tiny Sparkle Dot -->
+  <circle cx="14" cy="14" r="1.5" fill="#FFFFFF" opacity="0.85"/>
+</svg>
