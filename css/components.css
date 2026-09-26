@@ -482,18 +482,90 @@
               0 10px 24px -6px rgba(234, 77, 137, 0.12);
 }
 
-.hero-portrait-image {
+.hero-diaporama-container {
+  position: relative;
   width: 100%;
   height: 480px;
   border-radius: 28px 10px 28px 10px;
+  overflow: hidden;
+  background: #FFF0F5;
+}
+
+.hero-diaporama-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center 20%;
   display: block;
-  transition: transform 0.5s ease;
+  will-change: transform, opacity;
 }
 
-.hero-portrait-frame:hover .hero-portrait-image {
-  transform: scale(1.02);
+.hero-diaporama-slide.slide-1 {
+  animation: kenBurnsSlide1 4.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.hero-diaporama-slide.slide-2 {
+  object-position: center 22%;
+  animation: kenBurnsSlide2 4.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes kenBurnsSlide1 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  41% {
+    opacity: 1;
+    transform: scale(1.06);
+    visibility: visible;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.08);
+    visibility: hidden;
+  }
+  91% {
+    opacity: 0;
+    transform: scale(1);
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes kenBurnsSlide2 {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+    visibility: hidden;
+  }
+  41% {
+    opacity: 0;
+    transform: scale(1);
+    visibility: hidden;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  91% {
+    opacity: 1;
+    transform: scale(1.06);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+    visibility: hidden;
+  }
 }
 
 /* Floating Badges on Portrait */
@@ -1419,7 +1491,7 @@ a[href*="elfsight.com"] {
     padding: 8px;
     box-shadow: 0 16px 40px -10px rgba(46, 29, 90, 0.14);
   }
-  .hero-portrait-image {
+  .hero-diaporama-container {
     height: 330px;
     border-radius: 22px 8px 22px 8px;
   }
@@ -2981,13 +3053,14 @@ a[href*="elfsight.com"] {
 
 .meet-elena-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1.05fr 1.15fr;
   gap: 55px;
   align-items: center;
 }
 
 .elena-media-col {
   position: relative;
+  padding-bottom: 24px;
 }
 
 .elena-image-frame {
@@ -3001,31 +3074,34 @@ a[href*="elfsight.com"] {
 
 .elena-image {
   width: 100%;
-  height: 480px;
+  height: 580px;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 3%;
   display: block;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .elena-image-frame:hover .elena-image {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .elena-badge-academy {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 18px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 35px rgba(46, 29, 90, 0.15),
+              0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
   gap: 14px;
-  border: 1px solid rgba(234, 77, 137, 0.2);
+  border: 1px solid rgba(234, 77, 137, 0.22);
+  z-index: 5;
 }
 
 .elena-badge-academy-icon {
@@ -3186,8 +3262,14 @@ a[href*="elfsight.com"] {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .elena-media-col {
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+  }
   .elena-image {
-    height: 380px;
+    height: 480px;
+    object-position: center 3%;
   }
 }
 
