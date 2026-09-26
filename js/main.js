@@ -320,8 +320,8 @@ function initPriceEstimator() {
    -------------------------------------------------------------------------- */
 const MAKEOVER_DATA = {
   milo: {
-    beforeImg: 'assets/images/makeover_poodle_before.jpg',
-    afterImg: 'assets/images/makeover_poodle_after.jpg',
+    beforeImg: 'assets/images/Milo before.jpg',
+    afterImg: 'assets/images/Milo after.jpg',
     beforeHint: '7 Weeks Overgrown',
     afterHint: 'Signature Finish',
     beforeTag: 'Unbrushed & Shaggy Coat',
@@ -340,8 +340,8 @@ const MAKEOVER_DATA = {
     service: 'Teddy Bear Package (Milo)'
   },
   bella: {
-    beforeImg: 'assets/images/makeover_pom_before.jpg',
-    afterImg: 'assets/images/makeover_pom_after.jpg',
+    beforeImg: 'assets/images/bella before.jpg',
+    afterImg: 'assets/images/Bella After.jpg',
     beforeHint: 'Heavy Shedding & Puffy',
     afterHint: 'Boo Fluff Masterpiece',
     beforeTag: 'Overgrown Double Coat',
@@ -360,8 +360,8 @@ const MAKEOVER_DATA = {
     service: 'Pomeranian Boo Makeover (Bella)'
   },
   archie: {
-    beforeImg: 'assets/images/makeover_doodle_before.jpg',
-    afterImg: 'assets/images/makeover_doodle_after.jpg',
+    beforeImg: 'assets/images/Archie before.jpg',
+    afterImg: 'assets/images/Archie after.jpg',
     beforeHint: '8 Weeks Overgrown',
     afterHint: 'Clean & Fluffy Finish',
     beforeTag: 'Heavy Matted Curls',
