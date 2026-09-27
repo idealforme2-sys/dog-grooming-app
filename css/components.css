@@ -1385,47 +1385,68 @@ a[href*="elfsight.com"] {
   }
 
   /* Hero */
-  .hero-section { padding: 25px 0 45px; }
+  .hero-section { padding: 20px 0 40px; }
   .hero-grid { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; 
+    gap: 14px; 
     text-align: center;
   }
   .hero-content { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
+    display: contents;
   }
   .hero-tag {
-    font-size: 0.74rem;
-    padding: 5px 12px;
-    margin-bottom: 14px;
+    order: 1;
+    font-size: 0.70rem;
+    padding: 4px 10px;
+    margin-bottom: 8px;
     letter-spacing: 0.02em;
-    gap: 8px;
+    gap: 6px;
+    max-width: 92%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
   }
   .hero-title {
-    font-size: clamp(1.85rem, 6.8vw, 2.35rem);
-    line-height: 1.16;
-    margin-bottom: 12px;
+    order: 2;
+    font-size: clamp(1.75rem, 6.4vw, 2.2rem);
+    line-height: 1.18;
+    margin-bottom: 10px;
     letter-spacing: -0.02em;
+    padding: 0 4px;
   }
   .hero-subtitle { 
-    margin: 0 auto 20px; 
-    font-size: 0.94rem;
-    line-height: 1.55;
-    max-width: 380px;
+    order: 3;
+    margin: 0 auto 10px; 
+    font-size: 0.90rem;
+    line-height: 1.5;
+    max-width: 360px;
     color: var(--text-body);
+    padding: 0 8px;
   }
   
-  /* Hero Media: Editorial Portrait */
+  /* Hero Media: Editorial Portrait (Ordered directly below headline & intro) */
   .hero-media-wrap {
+    order: 4;
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
+    margin: 4px auto 16px;
     position: relative;
+  }
+  .hero-cta-wrap {
+    order: 5;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 340px;
+  }
+  .hero-proof-bar {
+    order: 6;
+    margin-bottom: 16px;
+  }
+  .hero-pillars-row {
+    order: 7;
+    margin-top: 2px;
   }
   .hero-portrait-frame {
     border-radius: 28px 12px 28px 12px;
@@ -2929,27 +2950,35 @@ a[href*="elfsight.com"] {
     display: none;
   }
   .top-promo-banner {
-    font-size: 0.74rem;
-    padding: 6px 8px;
+    font-size: 0.70rem;
+    padding: 3px 8px;
+    line-height: 1.25;
   }
   .top-promo-inner {
-    padding: 0 24px 0 0;
-    gap: 6px;
+    padding: 0 20px 0 0;
+    gap: 4px 6px;
     flex-wrap: wrap;
     justify-content: center;
-    line-height: 1.3;
+    align-items: center;
+    line-height: 1.2;
   }
   .top-promo-badge {
-    font-size: 0.68rem;
-    padding: 1px 7px;
+    font-size: 0.62rem;
+    padding: 1px 5px;
+    letter-spacing: 0.01em;
+  }
+  .top-promo-text {
+    font-size: 0.69rem;
+    text-align: center;
   }
   .top-promo-link {
-    font-size: 0.72rem;
-    padding: 1px 6px;
+    font-size: 0.67rem;
+    padding: 1px 5px;
+    white-space: nowrap;
   }
   .top-promo-close {
     right: 4px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -3200,17 +3229,51 @@ a[href*="elfsight.com"] {
 
 @media (max-width: 900px) {
   .meet-elena-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .elena-content-col {
+    display: contents;
+  }
+  .elena-header-group {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
   .elena-media-col {
+    order: 2;
     max-width: 440px;
     margin: 0 auto;
     width: 100%;
   }
   .elena-image {
-    height: 480px;
+    height: 440px;
     object-position: center 20%;
+  }
+  .elena-body-group {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  .elena-actions-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .elena-actions-row .btn-hero-cta,
+  .elena-actions-row .btn-hero-ig {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.96rem;
   }
 }
 
@@ -3223,6 +3286,413 @@ a[href*="elfsight.com"] {
   }
   .elena-ig-stat-num {
     font-size: 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   WHY CHOOSE US SECTION (We Treat Your Pets Like Family)
+   ========================================================================== */
+.why-us-section {
+  padding: 85px 0;
+  background: #FFFFFF;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.why-us-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-us-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.why-us-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #FFF6FA;
+  border: 1.5px solid #FCE1EB;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.why-us-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(234, 77, 137, 0.12);
+  border-color: var(--primary-pink);
+}
+
+.why-us-badge .badge-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-pink);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(234, 77, 137, 0.3);
+}
+
+.why-us-badge .badge-circle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.why-us-badge .badge-label {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.why-us-photo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-us-photo-frame {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1;
+  border-radius: 40px 16px 40px 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(46, 29, 90, 0.14);
+  border: 4px solid #FFFFFF;
+  background: var(--lavender-bg);
+}
+
+.why-us-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.why-us-photo-frame:hover img {
+  transform: scale(1.04);
+}
+
+.floating-heart {
+  position: absolute;
+  color: var(--primary-pink);
+  animation: floatGentle 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .why-us-content {
+    align-items: center;
+  }
+  .why-us-badges-grid {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-us-badges-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .why-us-badge {
+    padding: 14px 16px;
+  }
+  .why-us-photo-frame {
+    max-width: 320px;
+  }
+}
+
+/* ==========================================================================
+   READY TO TRANSFORM CTA BAND
+   ========================================================================== */
+.ready-transform-section {
+  padding: 30px 0 70px;
+  background: #FFFFFF;
+}
+
+.ready-transform-card {
+  position: relative;
+  border-radius: 36px;
+  background: linear-gradient(135deg, #2D1B59 0%, #1E1238 60%, #3B215E 100%);
+  padding: 60px 40px;
+  text-align: center;
+  color: #FFFFFF;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(30, 18, 56, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ready-bg-paw {
+  position: absolute;
+  right: -25px;
+  bottom: -35px;
+  width: 280px;
+  height: 280px;
+  fill: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.ready-transform-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ready-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 77, 137, 0.2);
+  border: 1px solid rgba(234, 77, 137, 0.4);
+  color: #FFB3D1;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+
+.ready-transform-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.22;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+}
+
+.ready-transform-subtitle {
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.ready-transform-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-white-cta {
+  background: #FFFFFF;
+  color: #1E1238 !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-spring);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.btn-white-cta:hover {
+  transform: translateY(-2px);
+  background: #FFF6FA;
+  color: var(--primary-pink) !important;
+  box-shadow: 0 12px 30px rgba(234, 77, 137, 0.35);
+}
+
+.btn-outline-white-cta {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition-spring);
+  font-size: 0.98rem;
+  text-decoration: none;
+}
+
+.btn-outline-white-cta:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .ready-transform-card {
+    padding: 40px 24px;
+    border-radius: 28px;
+  }
+  .ready-transform-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+  .ready-transform-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ready-transform-actions .btn-white-cta,
+  .ready-transform-actions .btn-outline-white-cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+}
+
+/* ==========================================================================
+   REDESIGNED FAQ 2-COLUMN LAYOUT WITH LUXURY SPA IMAGE
+   ========================================================================== */
+.faq-layout-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.faq-image-col {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.faq-photo-card {
+  position: relative;
+  border-radius: 36px 16px 36px 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(46, 29, 90, 0.12);
+  border: 4px solid #FFFFFF;
+  aspect-ratio: 3/4;
+  max-height: 500px;
+  background: var(--lavender-bg);
+}
+
+.faq-photo-card .faq-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.faq-photo-card:hover .faq-img {
+  transform: scale(1.03);
+}
+
+.faq-photo-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 24px rgba(46, 29, 90, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.faq-photo-badge-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.faq-photo-badge-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.faq-photo-badge-sub {
+  font-size: 0.74rem;
+  color: var(--text-body);
+}
+
+.faq-quote-box {
+  background: #FAF7FE;
+  border: 1.5px solid #E8DEF5;
+  border-radius: 20px;
+  padding: 18px 22px;
+  position: relative;
+}
+
+.quote-paw {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  font-size: 1.2rem;
+  background: #FFFFFF;
+  border-radius: 50%;
+  padding: 2px 6px;
+  box-shadow: 0 2px 8px rgba(46, 29, 90, 0.08);
+}
+
+.faq-quote-box p {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.faq-quote-box .quote-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-pink);
+}
+
+.faq-accordion-col .faq-container {
+  margin: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .faq-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .faq-image-col {
+    position: static;
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
