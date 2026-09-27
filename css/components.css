@@ -3467,16 +3467,37 @@ a[href*="elfsight.com"] {
 
 @media (max-width: 900px) {
   .why-us-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
     text-align: center;
-  }
-  .why-us-content {
     align-items: center;
   }
+  .why-us-content {
+    display: contents;
+  }
+  .why-us-header-group {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .why-us-header-group .section-desc {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px !important;
+  }
+  .why-us-photo-wrapper {
+    order: 2;
+    width: 100%;
+    margin: 6px 0 14px;
+  }
   .why-us-badges-grid {
+    order: 3;
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
   }
 }
 
@@ -3768,7 +3789,7 @@ a[href*="elfsight.com"] {
 }
 
 /* ==========================================================================
-   SITE PRELOADER - Atelier Paw Glow & Scissor Sparkle
+   SITE PRELOADER - CONCEPT B: EDITORIAL WORDMARK & PERCENTAGE COUNTER
    ========================================================================== */
 .site-preloader {
   position: fixed;
@@ -3779,11 +3800,11 @@ a[href*="elfsight.com"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #180E2F;
-  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              filter 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #140A22;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
 
@@ -3791,15 +3812,31 @@ a[href*="elfsight.com"] {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: scale(1.04);
-  filter: blur(8px);
+  transform: scale(1.03);
+  filter: blur(10px);
 }
 
 .preloader-backdrop {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(234, 77, 137, 0.22) 0%, rgba(46, 29, 90, 0.65) 45%, #180E2F 100%);
+  background: radial-gradient(circle at 50% 48%, rgba(234, 77, 137, 0.16) 0%, rgba(32, 17, 54, 0.8) 50%, #140A22 100%);
   pointer-events: none;
+}
+
+.preloader-glow-orb {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 77, 137, 0.25) 0%, rgba(246, 184, 143, 0.08) 50%, transparent 75%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: glowOrbPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowOrbPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
 }
 
 .preloader-center-card {
@@ -3809,149 +3846,103 @@ a[href*="elfsight.com"] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 30px 24px;
-  max-width: 380px;
+  padding: 36px 24px;
+  max-width: 520px;
   width: 90%;
 }
 
-.preloader-emblem-wrap {
-  position: relative;
-  width: 96px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.preloader-halo {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(234, 77, 137, 0.7), rgba(126, 87, 194, 0.7));
-  filter: blur(14px);
-  animation: preloaderPulse 2s ease-in-out infinite alternate;
-}
-
-.preloader-logo-badge {
-  position: relative;
-  width: 78px;
-  height: 78px;
-  border-radius: 26px;
-  background: #2A1A4E;
-  border: 2px solid rgba(234, 77, 137, 0.45);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: preloaderFloat 2.2s ease-in-out infinite;
-}
-
-.preloader-logo-img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
-}
-
-.preloader-brand-group {
-  margin-bottom: 20px;
+.preloader-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: #E2B98E;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.95;
 }
 
 .preloader-brand-title {
   font-family: var(--font-heading);
-  font-size: 1.55rem;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
   font-weight: 800;
   color: #FFFFFF;
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .preloader-brand-title .text-pink {
   color: var(--primary-pink);
+  font-weight: 900;
 }
 
 .preloader-brand-sub {
   font-family: var(--font-heading);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.16em;
-  color: #B4A9C6;
+  color: #AEA3BE;
   text-transform: uppercase;
+  margin-bottom: 28px;
 }
 
-/* Walking Paws Sequence */
-.preloader-paws-row {
+/* Digital Percentage Counter */
+.preloader-counter-wrap {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  gap: 14px;
-  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin-bottom: 18px;
 }
 
-.preloader-paw {
-  font-size: 1.35rem;
-  opacity: 0.15;
-  transform: scale(0.85);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  animation: pawWalk 1.4s infinite ease-in-out;
-  filter: drop-shadow(0 2px 6px rgba(234, 77, 137, 0.5));
+.preloader-counter-num {
+  font-size: clamp(3rem, 7vw, 4.4rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 25px rgba(234, 77, 137, 0.45);
 }
 
-.paw-step-1 { animation-delay: 0s; }
-.paw-step-2 { animation-delay: 0.35s; }
-.paw-step-3 { animation-delay: 0.7s; }
-
-@keyframes pawWalk {
-  0%, 100% {
-    opacity: 0.15;
-    transform: scale(0.85) translateY(0);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1.25) translateY(-5px);
-  }
-  60% {
-    opacity: 0.45;
-    transform: scale(0.95) translateY(0);
-  }
+.preloader-counter-unit {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 700;
+  color: var(--primary-pink);
+  margin-left: 2px;
+  opacity: 0.9;
 }
 
-@keyframes preloaderPulse {
-  0% { transform: scale(0.9); opacity: 0.5; }
-  100% { transform: scale(1.15); opacity: 0.95; }
-}
-
-@keyframes preloaderFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Progress Bar */
+/* Hairline Progress Track with Shimmer */
 .preloader-progress-track {
   width: 100%;
-  max-width: 220px;
-  height: 4px;
+  max-width: 240px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-pill);
   overflow: hidden;
-  margin-bottom: 12px;
+  position: relative;
+  margin-bottom: 16px;
 }
 
 .preloader-progress-bar {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #EA4D89 0%, #B35CE5 70%, #FFFFFF 100%);
+  background: linear-gradient(90deg, #EA4D89 0%, #F6B88F 60%, #FFFFFF 100%);
   border-radius: var(--radius-pill);
-  box-shadow: 0 0 10px rgba(234, 77, 137, 0.7);
-  transition: width 0.35s ease-out;
+  box-shadow: 0 0 8px rgba(234, 77, 137, 0.8);
+  transition: width 0.15s ease-out;
 }
 
 .preloader-status-msg {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.02em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initFloatingQuickBar();
   initCursorSparkles();
+  initPawTapRipple();
 });
 
 /* --------------------------------------------------------------------------
@@ -602,28 +603,43 @@ function initFloatingQuickBar() {
 }
 
 /* --------------------------------------------------------------------------
-   12. Luxury Preloader - Atelier Paw Glow & Progress Bar
+   12. Luxury Preloader - Concept B: Editorial Wordmark & Percentage Counter
    -------------------------------------------------------------------------- */
 function initPreloader() {
   const preloader = document.getElementById('sitePreloader');
   if (!preloader) return;
 
   const progressBar = document.getElementById('preloaderProgressBar');
+  const counterNum = document.getElementById('preloaderCounter');
   const statusMsg = document.getElementById('preloaderStatusMsg');
 
   const startTime = Date.now();
-  const minDisplayTime = 850;
+  const minDisplayTime = 950;
 
-  let progress = 18;
-  if (progressBar) progressBar.style.width = '18%';
+  let currentPercent = 0;
+
+  function updateStatus(val) {
+    if (!statusMsg) return;
+    if (val < 35) {
+      statusMsg.textContent = 'INITIALIZING ATELIER SUITE...';
+    } else if (val < 75) {
+      statusMsg.textContent = 'CURATING COAT & SKIN WELLNESS...';
+    } else if (val < 100) {
+      statusMsg.textContent = 'PREPARING SHEEPSHEAD ATELIER...';
+    } else {
+      statusMsg.textContent = 'RED-CARPET READY ✨';
+    }
+  }
 
   const interval = setInterval(() => {
-    if (progress < 85) {
-      progress += Math.floor(Math.random() * 15) + 10;
-      if (progress > 85) progress = 85;
-      if (progressBar) progressBar.style.width = progress + '%';
+    if (currentPercent < 88) {
+      currentPercent += Math.floor(Math.random() * 9) + 4;
+      if (currentPercent > 88) currentPercent = 88;
+      if (progressBar) progressBar.style.width = currentPercent + '%';
+      if (counterNum) counterNum.textContent = currentPercent;
+      updateStatus(currentPercent);
     }
-  }, 100);
+  }, 45);
 
   let dismissed = false;
   const dismissPreloader = () => {
@@ -635,15 +651,30 @@ function initPreloader() {
       if (dismissed) return;
       dismissed = true;
       clearInterval(interval);
-      if (progressBar) progressBar.style.width = '100%';
-      if (statusMsg) statusMsg.textContent = 'Red-carpet ready! ✨';
 
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-        setTimeout(() => {
-          preloader.style.display = 'none';
-        }, 550);
-      }, 280);
+      // Smooth step to 100%
+      let finishVal = currentPercent;
+      const finishTimer = setInterval(() => {
+        finishVal += 3;
+        if (finishVal >= 100) {
+          finishVal = 100;
+          clearInterval(finishTimer);
+          if (progressBar) progressBar.style.width = '100%';
+          if (counterNum) counterNum.textContent = '100';
+          updateStatus(100);
+
+          setTimeout(() => {
+            preloader.classList.add('loaded');
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 600);
+          }, 240);
+        } else {
+          if (progressBar) progressBar.style.width = finishVal + '%';
+          if (counterNum) counterNum.textContent = finishVal;
+          updateStatus(finishVal);
+        }
+      }, 16);
     }, remaining);
   };
 
@@ -652,8 +683,25 @@ function initPreloader() {
   } else {
     window.addEventListener('load', dismissPreloader);
     // Fallback safety timeout
-    setTimeout(dismissPreloader, 1500);
+    setTimeout(dismissPreloader, 1800);
   }
+}
+
+/* --------------------------------------------------------------------------
+   13. Dog Grooming Cursor Studio - Mobile Paw Tap Ripple
+   -------------------------------------------------------------------------- */
+function initPawTapRipple() {
+  document.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse') return;
+    const ripple = document.createElement('div');
+    ripple.className = 'paw-ripple';
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    document.body.appendChild(ripple);
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }, { passive: true });
 }
 
 

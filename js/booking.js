@@ -267,7 +267,7 @@ const serviceDataCatalog = {
   'de-shedding': {
     title: 'De-Shedding Treatment',
     desc: 'Specialized 4-step undercoat removal program using specialized furminating brushes, deshedding shampoo & solution, and high-velocity fluff blowout.',
-    image: 'assets/images/service_cat.jpg',
+    image: 'assets/images/service_deshedding.jpg',
     duration: '60 - 80 mins',
     price: '$55 - $80',
     includes: ['De-shedding deep soak bath', 'Undercoat conditioning soak', 'High-velocity coat blowout', 'Specialist rake & blade brushing', 'Reduces shedding by up to 90%', 'Healthy dermal coat polish']

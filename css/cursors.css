@@ -1,0 +1,89 @@
+/* ==========================================================================
+   DOG GROOMING CURSORS & TOUCH FEEDBACK - DESKTOP 32PX & MOBILE 48PX
+   ========================================================================== */
+
+/* Mobile Touch & Tap Hygiene */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  touch-action: manipulation;
+}
+
+/* Paw Tap Ripple (Touch equivalent of cursor) */
+.paw-ripple {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: none;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 143, 171, 0.55) 0 40%, rgba(255, 143, 171, 0) 70%);
+  animation: pawRip 0.5s ease-out forwards;
+}
+
+.paw-ripple::after {
+  content: '🐾';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  animation: pawFade 0.5s ease-out forwards;
+}
+
+@keyframes pawRip {
+  from { transform: scale(0.4); opacity: 1; }
+  to { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes pawFade {
+  from { opacity: 1; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(1.2); }
+}
+
+/* Desktop 32px Cursor Set */
+@media (min-width: 901px) {
+  html, body {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cpath%20d%3D'M7%202%207%2025%2012.6%2020.2%2016%2029%2020.6%2027%2017.2%2018.6%2025%2018.6Z'%20fill%3D'%23ff8fab'%20stroke%3D'%23fff'%20stroke-width%3D'2'%20stroke-linejoin%3D'round'%2F%3E%3Cg%20fill%3D'%23fff'%3E%3Ccircle%20cx%3D'9'%20cy%3D'12.6'%20r%3D'1.2'%2F%3E%3Ccircle%20cx%3D'12'%20cy%3D'11.5'%20r%3D'1.2'%2F%3E%3Ccircle%20cx%3D'15'%20cy%3D'12.6'%20r%3D'1.2'%2F%3E%3Cellipse%20cx%3D'12'%20cy%3D'15.8'%20rx%3D'2.7'%20ry%3D'2.1'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 7 2, auto;
+  }
+  a, button, select, [role="button"], input[type="submit"], input[type="button"],
+  .btn, .calc-chip-btn, .service-card, .faq-question-btn, .makeover-tab-btn,
+  .gallery-nav-btn, .top-promo-link, .top-promo-close, .modal-close-btn {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20fill%3D'%238d5a3b'%20stroke%3D'%238d5a3b'%20stroke-width%3D'2.6'%20stroke-linejoin%3D'round'%3E%3Ccircle%20cx%3D'10'%20cy%3D'13'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'10'%20cy%3D'19'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'22'%20cy%3D'13'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'22'%20cy%3D'19'%20r%3D'3.1'%2F%3E%3Crect%20x%3D'10'%20y%3D'13.2'%20width%3D'12'%20height%3D'5.6'%20rx%3D'2'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%23fff3e0'%3E%3Ccircle%20cx%3D'10'%20cy%3D'13'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'10'%20cy%3D'19'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'22'%20cy%3D'13'%20r%3D'3.1'%2F%3E%3Ccircle%20cx%3D'22'%20cy%3D'19'%20r%3D'3.1'%2F%3E%3Crect%20x%3D'10'%20y%3D'13.2'%20width%3D'12'%20height%3D'5.6'%20rx%3D'2'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 16 16, pointer !important;
+  }
+  input, textarea, p, span, h1, h2, h3, h4, label {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20fill%3D'%23fff'%20stroke%3D'%23fff'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%3E%3Crect%20x%3D'12.5'%20y%3D'5'%20width%3D'4.5'%20height%3D'22'%20rx%3D'2.2'%2F%3E%3Crect%20x%3D'16'%20y%3D'8'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'11'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'14'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'17'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'20'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'23'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%232ec4b6'%3E%3Crect%20x%3D'12.5'%20y%3D'5'%20width%3D'4.5'%20height%3D'22'%20rx%3D'2.2'%2F%3E%3Crect%20x%3D'16'%20y%3D'8'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'11'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'14'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'17'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'20'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3Crect%20x%3D'16'%20y%3D'23'%20width%3D'7'%20height%3D'1.8'%20rx%3D'0.9'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 17 16, text;
+  }
+  a *, button *, [role="button"] *, .btn * {
+    cursor: inherit;
+  }
+  .busy, .loading, [aria-busy="true"], .is-loading {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20fill%3D'%23fff'%20stroke%3D'%23fff'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M9%2015%20A7%207%200%200%201%2023%2015%20L23%2018%20L9%2018%20Z'%2F%3E%3Crect%20x%3D'14.4'%20y%3D'5'%20width%3D'3.2'%20height%3D'6'%20rx%3D'1.6'%2F%3E%3Ccircle%20cx%3D'12'%20cy%3D'22'%20r%3D'1.7'%2F%3E%3Ccircle%20cx%3D'16'%20cy%3D'25'%20r%3D'1.7'%2F%3E%3Ccircle%20cx%3D'20'%20cy%3D'22'%20r%3D'1.7'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%23b0bec5'%3E%3Cpath%20d%3D'M9%2015%20A7%207%200%200%201%2023%2015%20L23%2018%20L9%2018%20Z'%2F%3E%3Crect%20x%3D'14.4'%20y%3D'5'%20width%3D'3.2'%20height%3D'6'%20rx%3D'1.6'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%234fc3f7'%3E%3Ccircle%20cx%3D'12'%20cy%3D'22'%20r%3D'1.7'%2F%3E%3Ccircle%20cx%3D'16'%20cy%3D'25'%20r%3D'1.7'%2F%3E%3Ccircle%20cx%3D'20'%20cy%3D'22'%20r%3D'1.7'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 16 16, wait !important;
+  }
+}
+
+/* Mobile 48px Cursor Set (Fine Pointer / Trackpad on iPad & Tablets) */
+@media (max-width: 900px) and (any-pointer: fine) {
+  html, body {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'48'%20height%3D'48'%20viewBox%3D'0%200%2048%2048'%3E%3Cpath%20d%3D'M10%203%2010%2037%2018.5%2030%2024%2043%2031%2040%2026%2028%2038%2028Z'%20fill%3D'%23ff8fab'%20stroke%3D'%23fff'%20stroke-width%3D'3'%20stroke-linejoin%3D'round'%2F%3E%3Cg%20fill%3D'%23fff'%3E%3Ccircle%20cx%3D'13.5'%20cy%3D'19'%20r%3D'2'%2F%3E%3Ccircle%20cx%3D'18'%20cy%3D'16.8'%20r%3D'2'%2F%3E%3Ccircle%20cx%3D'22.5'%20cy%3D'19'%20r%3D'2'%2F%3E%3Cellipse%20cx%3D'18'%20cy%3D'24'%20rx%3D'4'%20ry%3D'3.1'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 10 3, auto;
+  }
+  a, button, select, [role="button"], input[type="submit"], input[type="button"],
+  .btn, .calc-chip-btn, .service-card, .faq-question-btn, .makeover-tab-btn,
+  .gallery-nav-btn, .top-promo-link, .top-promo-close, .modal-close-btn {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'48'%20height%3D'48'%20viewBox%3D'0%200%2048%2048'%3E%3Cg%20fill%3D'%238d5a3b'%20stroke%3D'%238d5a3b'%20stroke-width%3D'3.6'%20stroke-linejoin%3D'round'%3E%3Ccircle%20cx%3D'15'%20cy%3D'19.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'15'%20cy%3D'28.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'33'%20cy%3D'19.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'33'%20cy%3D'28.5'%20r%3D'4.6'%2F%3E%3Crect%20x%3D'15'%20y%3D'19.8'%20width%3D'18'%20height%3D'8.4'%20rx%3D'3'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%23fff3e0'%3E%3Ccircle%20cx%3D'15'%20cy%3D'19.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'15'%20cy%3D'28.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'33'%20cy%3D'19.5'%20r%3D'4.6'%2F%3E%3Ccircle%20cx%3D'33'%20cy%3D'28.5'%20r%3D'4.6'%2F%3E%3Crect%20x%3D'15'%20y%3D'19.8'%20width%3D'18'%20height%3D'8.4'%20rx%3D'3'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 24 24, pointer !important;
+  }
+  a:active, button:active, [role="button"]:active, .btn:active {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'48'%20height%3D'48'%20viewBox%3D'0%200%2048%2048'%3E%3Ccircle%20cx%3D'24'%20cy%3D'24'%20r%3D'21'%20fill%3D'none'%20stroke%3D'%23ff8fab'%20stroke-width%3D'3'%20stroke-dasharray%3D'4%206'%20stroke-linecap%3D'round'%2F%3E%3Cg%20fill%3D'%23ff8fab'%20stroke%3D'%23fff'%20stroke-width%3D'2.5'%3E%3Ccircle%20cx%3D'16'%20cy%3D'19'%20r%3D'3.6'%2F%3E%3Ccircle%20cx%3D'24'%20cy%3D'16.5'%20r%3D'3.6'%2F%3E%3Ccircle%20cx%3D'32'%20cy%3D'19'%20r%3D'3.6'%2F%3E%3Cellipse%20cx%3D'24'%20cy%3D'27.5'%20rx%3D'6.5'%20ry%3D'5.2'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 24 24, pointer !important;
+  }
+  input, textarea, p, span, h1, h2, h3, h4, label {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'48'%20height%3D'48'%20viewBox%3D'0%200%2048%2048'%3E%3Cg%20fill%3D'%23fff'%20stroke%3D'%23fff'%20stroke-width%3D'3.2'%20stroke-linejoin%3D'round'%3E%3Crect%20x%3D'19'%20y%3D'7'%20width%3D'7'%20height%3D'33'%20rx%3D'3.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'12'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'16.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'21'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'25.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'30'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'34.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%232ec4b6'%3E%3Crect%20x%3D'19'%20y%3D'7'%20width%3D'7'%20height%3D'33'%20rx%3D'3.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'12'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'16.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'21'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'25.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'30'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3Crect%20x%3D'24'%20y%3D'34.5'%20width%3D'10'%20height%3D'2.7'%20rx%3D'1.3'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 22 24, text;
+  }
+  a *, button *, [role="button"] *, .btn * {
+    cursor: inherit;
+  }
+  .busy, .loading, [aria-busy="true"], .is-loading {
+    cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'48'%20height%3D'48'%20viewBox%3D'0%200%2048%2048'%3E%3Cg%20fill%3D'%23fff'%20stroke%3D'%23fff'%20stroke-width%3D'3.2'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M13.5%2022.5%20A10.5%2010.5%200%200%201%2034.5%2022.5%20L34.5%2027%20L13.5%2027%20Z'%2F%3E%3Crect%20x%3D'21.6'%20y%3D'7.5'%20width%3D'4.8'%20height%3D'9'%20rx%3D'2.4'%2F%3E%3Ccircle%20cx%3D'18'%20cy%3D'33'%20r%3D'2.5'%2F%3E%3Ccircle%20cx%3D'24'%20cy%3D'37.5'%20r%3D'2.5'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'33'%20r%3D'2.5'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%23b0bec5'%3E%3Cpath%20d%3D'M13.5%2022.5%20A10.5%2010.5%200%200%201%2034.5%2022.5%20L34.5%2027%20L13.5%2027%20Z'%2F%3E%3Crect%20x%3D'21.6'%20y%3D'7.5'%20width%3D'4.8'%20height%3D'9'%20rx%3D'2.4'%2F%3E%3C%2Fg%3E%3Cg%20fill%3D'%234fc3f7'%3E%3Ccircle%20cx%3D'18'%20cy%3D'33'%20r%3D'2.5'%2F%3E%3Ccircle%20cx%3D'24'%20cy%3D'37.5'%20r%3D'2.5'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'33'%20r%3D'2.5'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 24 24, wait !important;
+  }
+}

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/cursors.css">
 
   <!-- Dog-Themed Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/dog_face_3d.png">
@@ -19,37 +20,31 @@
 <body>
 
   <!-- ========================================================================
-       PRELOADER - ATELIER PAW GLOW & SCISSOR SPARKLE
+       PRELOADER - CONCEPT B: EDITORIAL WORDMARK & PERCENTAGE COUNTER
        ======================================================================== -->
   <div class="site-preloader" id="sitePreloader" role="status" aria-live="polite">
     <div class="preloader-backdrop"></div>
+    <div class="preloader-glow-orb"></div>
     <div class="preloader-center-card">
-      <!-- 3D Dog Icon with ambient pulse halo -->
-      <div class="preloader-emblem-wrap">
-        <div class="preloader-halo"></div>
-        <div class="preloader-logo-badge">
-          <img src="assets/icons/dog_face_3d.png" alt="Elena Dog Groomer NYC" width="68" height="68" class="preloader-logo-img">
-        </div>
+      <!-- Atelier Eyebrow -->
+      <span class="preloader-eyebrow">ELENA • ATELIER PRIVÉ • SHEEPSHEAD BAY</span>
+
+      <!-- Editorial Wordmark -->
+      <h2 class="preloader-brand-title">DOG GROOMER<span class="text-pink">.NYC</span></h2>
+      <span class="preloader-brand-sub">CAGE-FREE 1-ON-1 CANINE WELLNESS</span>
+
+      <!-- Digital Percentage Counter -->
+      <div class="preloader-counter-wrap">
+        <span class="preloader-counter-num" id="preloaderCounter">0</span><span class="preloader-counter-unit">%</span>
       </div>
 
-      <!-- Atelier Brand Typography -->
-      <div class="preloader-brand-group">
-        <h2 class="preloader-brand-title">Dog Groomer<span class="text-pink">.nyc</span></h2>
-        <span class="preloader-brand-sub">ELENA • 1-ON-1 ATELIER</span>
-      </div>
-
-      <!-- 3 Animated Walking Paws -->
-      <div class="preloader-paws-row" aria-hidden="true">
-        <span class="preloader-paw paw-step-1">🐾</span>
-        <span class="preloader-paw paw-step-2">🐾</span>
-        <span class="preloader-paw paw-step-3">🐾</span>
-      </div>
-
-      <!-- Slim Luxury Progress Indicator -->
+      <!-- Hairline Progress Track with Shimmer -->
       <div class="preloader-progress-track">
         <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
       </div>
-      <span class="preloader-status-msg" id="preloaderStatusMsg">Preparing pampering suite...</span>
+
+      <!-- Subtle Status Message -->
+      <span class="preloader-status-msg" id="preloaderStatusMsg">INITIALIZING ATELIER SUITE...</span>
     </div>
   </div>
 
@@ -1411,13 +1406,15 @@
         <div class="why-us-grid">
           <!-- Left Text & 4 Badges -->
           <div class="why-us-content">
-            <span class="eyebrow">WHY CHOOSE US</span>
-            <h2 class="section-title">
-              We Treat Your Pets<br>Like Family <span class="heart-icon" style="color:var(--primary-pink);">♡</span>
-            </h2>
-            <p class="section-desc" style="margin-bottom: 28px; max-width: 520px;">
-              No crowded cages, no rushed appointments. In our private Sheepshead Bay atelier, your pet receives unhurried, fear-free 1-on-1 care from a certified master stylist.
-            </p>
+            <div class="why-us-header-group">
+              <span class="eyebrow">WHY CHOOSE US</span>
+              <h2 class="section-title">
+                We Treat Your Pets<br>Like Family <span class="heart-icon" style="color:var(--primary-pink);">♡</span>
+              </h2>
+              <p class="section-desc" style="margin-bottom: 28px; max-width: 520px;">
+                No crowded cages, no rushed appointments. In our private Sheepshead Bay atelier, your pet receives unhurried, fear-free 1-on-1 care from a certified master stylist.
+              </p>
+            </div>
 
             <div class="why-us-badges-grid">
               <!-- Badge 1 -->

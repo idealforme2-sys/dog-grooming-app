@@ -73,7 +73,6 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  cursor: url('../assets/icons/cursor-paw.svg') 4 4, auto;
 }
 
 body {
@@ -84,7 +83,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('../assets/icons/cursor-paw.svg') 4 4, auto;
 }
 
 img {
@@ -110,19 +108,6 @@ button {
   background: none;
 }
 
-/* Custom Themed Paw Cursor for Interactive Elements */
-a, button, [role="button"], input[type="submit"], input[type="button"], select, 
-.btn, .calc-chip-btn, .service-card, .faq-question-btn, .makeover-tab-btn, 
-.gallery-nav-btn, .top-promo-link, .top-promo-close, .modal-close-btn {
-  cursor: url('../assets/icons/cursor-pointer.svg') 4 4, pointer !important;
-}
-
-/* Touch devices override */
-@media (hover: none) and (pointer: coarse) {
-  html, body, a, button, select, [role="button"], .btn {
-    cursor: auto !important;
-  }
-}
 
 ul, ol {
   list-style: none;
