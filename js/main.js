@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
   initNavbar();
   initConsultationForm();
   initServiceRows();
@@ -599,3 +600,60 @@ function initFloatingQuickBar() {
     });
   }
 }
+
+/* --------------------------------------------------------------------------
+   12. Luxury Preloader - Atelier Paw Glow & Progress Bar
+   -------------------------------------------------------------------------- */
+function initPreloader() {
+  const preloader = document.getElementById('sitePreloader');
+  if (!preloader) return;
+
+  const progressBar = document.getElementById('preloaderProgressBar');
+  const statusMsg = document.getElementById('preloaderStatusMsg');
+
+  const startTime = Date.now();
+  const minDisplayTime = 850;
+
+  let progress = 18;
+  if (progressBar) progressBar.style.width = '18%';
+
+  const interval = setInterval(() => {
+    if (progress < 85) {
+      progress += Math.floor(Math.random() * 15) + 10;
+      if (progress > 85) progress = 85;
+      if (progressBar) progressBar.style.width = progress + '%';
+    }
+  }, 100);
+
+  let dismissed = false;
+  const dismissPreloader = () => {
+    if (dismissed) return;
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minDisplayTime - elapsed);
+
+    setTimeout(() => {
+      if (dismissed) return;
+      dismissed = true;
+      clearInterval(interval);
+      if (progressBar) progressBar.style.width = '100%';
+      if (statusMsg) statusMsg.textContent = 'Red-carpet ready! ✨';
+
+      setTimeout(() => {
+        preloader.classList.add('loaded');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 550);
+      }, 280);
+    }, remaining);
+  };
+
+  if (document.readyState === 'complete') {
+    dismissPreloader();
+  } else {
+    window.addEventListener('load', dismissPreloader);
+    // Fallback safety timeout
+    setTimeout(dismissPreloader, 1500);
+  }
+}
+
+
